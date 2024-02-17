@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36fc6dbad1cc56c45bf8ef08ed64054e, type: 3}
+  m_Name: Forest5
+  m_EditorClassIdentifier: 
+  enemyName: "\u30D5\u30A7\u30A2\u30EA\u30FC"
+  enemyHP: 75
+  patternList:
+  - Rule: {fileID: 11400000, guid: 0f8a0ef0d934c3f499181fc073de2db6, type: 2}
+    Condition: 100
+  - Rule: {fileID: 11400000, guid: a082cc74266d5ce41ae9f52b8f48263f, type: 2}
+    Condition: 50
+  enemyModel: {fileID: 6043406026178626824, guid: 2fde5235de4251a4695b9203977b61e8, type: 3}

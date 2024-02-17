@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e8a092379c04a1439851ca6e4303664, type: 3}
+  m_Name: Town2-1
+  m_EditorClassIdentifier: 
+  SkillDataSets:
+  - Data: {fileID: 11400000, guid: a8f743677fe2f794dafe199bfb71e286, type: 2}
+    Rate: 1
+  - Data: {fileID: 11400000, guid: dfa9543836057164a8ccf8643a9ff176, type: 2}
+    Rate: 3
+  CoolTime: 3

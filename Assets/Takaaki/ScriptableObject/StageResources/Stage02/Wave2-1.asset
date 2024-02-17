@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de4d6b2460c54134f8063685081222a9, type: 3}
+  m_Name: Wave2-1
+  m_EditorClassIdentifier: 
+  TilePrefab: {fileID: 4002005866899647676, guid: c7870a3a4a7e37f419d2c038f4985db6, type: 3}
+  row: 5
+  column: 5
+  playerX: 2
+  playerY: 2
+  infoEnemy: {fileID: 11400000, guid: 3103f440ab591874b817365f22b97208, type: 2}

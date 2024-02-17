@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e8a092379c04a1439851ca6e4303664, type: 3}
+  m_Name: Castle3-2
+  m_EditorClassIdentifier: 
+  SkillDataSets:
+  - Data: {fileID: 11400000, guid: 4b0d41a5b7a0ea2409d73e1a8bbe46fb, type: 2}
+    Rate: 3
+  - Data: {fileID: 11400000, guid: 922094f1ee1eae347936a51066c36129, type: 2}
+    Rate: 4
+  - Data: {fileID: 11400000, guid: a0b402672e33aa247887c2479967b301, type: 2}
+    Rate: 5
+  - Data: {fileID: 11400000, guid: 24e2a923d1a6bbe4ebf672d94782e1bf, type: 2}
+    Rate: 1
+  - Data: {fileID: 11400000, guid: 307cf5ca34fad8240947ddbebdc88eff, type: 2}
+    Rate: 2
+  - Data: {fileID: 11400000, guid: 8b13bf36ef8900b4cb816de97cb8bfce, type: 2}
+    Rate: 2
+  CoolTime: 10

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36fc6dbad1cc56c45bf8ef08ed64054e, type: 3}
+  m_Name: Town5
+  m_EditorClassIdentifier: 
+  enemyName: "\u30B4\u30FC\u30EC\u30E0"
+  enemyHP: 105
+  patternList:
+  - Rule: {fileID: 11400000, guid: 485ba1894d34eee4e8d8438ad95dc009, type: 2}
+    Condition: 100
+  - Rule: {fileID: 11400000, guid: 963dbc71753aa884b925ba1bf2a2d39e, type: 2}
+    Condition: 50
+  enemyModel: {fileID: 5898344417909945290, guid: f9b1daac53b3534418d2b98ed043b834, type: 3}

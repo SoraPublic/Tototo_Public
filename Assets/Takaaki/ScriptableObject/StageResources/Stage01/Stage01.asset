@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623995d659578ab4b921a3f3ccbe18a7, type: 3}
+  m_Name: Stage01
+  m_EditorClassIdentifier: 
+  stgaeNum: 1
+  stageBackGround: {fileID: 1492279355840729848, guid: b27f7fdb06156004f9fc5c4d3b21040f, type: 3}
+  waveEntities:
+  - {fileID: 11400000, guid: 1235320f75bac234db2ab4f0fd609750, type: 2}
+  - {fileID: 11400000, guid: accea3083f9b0464795a395a6e945946, type: 2}
+  - {fileID: 11400000, guid: 2d3cf757cf59bc447831b8efa9c501bf, type: 2}
+  stageEntity: {fileID: 11400000, guid: d6a8d7af68244de44bd581b3d70db49f, type: 2}
+  resultEntity: {fileID: 11400000, guid: 37c5c41af6170124eaed2187a59f7eab, type: 2}
+  cardSelectBack: {fileID: 21300000, guid: 57a3eee57c031104ebf322ba991e3aa7, type: 3}
+  magics:
+  - {fileID: 11400000, guid: 21b091552c72a18478c0c409c786dfdf, type: 2}
+  - {fileID: 11400000, guid: fab3e929a895cc941819c7d51ae804eb, type: 2}
+  - {fileID: 11400000, guid: ade2016b2f0fa9848abae14a1e0ff205, type: 2}
+  TargetColor: {r: 0.8235294, g: 0.078431375, b: 0.078431375, a: 1}

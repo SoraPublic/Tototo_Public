@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Takaaki/Scene/Title_Takaaki.unity
+    guid: 14ce10020dfbc744595a9a27e9c7ff8b
+  - enabled: 1
+    path: Assets/Takaaki/Scene/BattleTest_Takaaki.unity
+    guid: 531d17a0a77513b41b5b604f2394de37
+  - enabled: 0
+    path: Assets/Takaaki/Scene/PlayerTest_Takaaki.unity
+    guid: 248f399160d2fcd4c944e9291bf0d823
+  - enabled: 1
+    path: Assets/Takaaki/Scene/CardSelect_Takaaki.unity
+    guid: 7fc6be506d3472f46aa6cc992662e399
+  - enabled: 1
+    path: Assets/Takaaki/Scene/Menu_Takaaki.unity
+    guid: 36e8db379e4748a47a892aa4ba3abcac
+  - enabled: 1
+    path: Assets/Takaaki/Scene/StageSelect_Takaaki.unity
+    guid: d1fe60a7423cae1439556ed78ed1d907
+  - enabled: 1
+    path: Assets/Ten/Scene/ResultTest_Ten.unity
+    guid: f52536cd7d2fe6a4b8466da43ccbdc32
+  - enabled: 1
+    path: Assets/naichilab/unity-simple-ranking/Scenes/Ranking.unity
+    guid: 152244f5855414ac4a3874f14efa583c
+  - enabled: 1
+    path: Assets/Ten/Scene/GameOver_Ten.unity
+    guid: 9a0227a4f207ec6448ee888ccca060b5
+  m_configObjects: {}
