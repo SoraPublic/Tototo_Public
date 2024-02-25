@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -35,7 +35,7 @@ public class CardSelect : MonoBehaviour
         DataManger dataManger = new DataManger();
         GameData gameData = dataManger.LoadGameData();
 
-        //ƒXƒgƒŒ[ƒW‚É‚ ‚éƒJ[ƒh‚ğ¶¬
+        //ã‚¹ãƒˆãƒ¬ãƒ¼ã‚¸ã«ã‚ã‚‹ã‚«ãƒ¼ãƒ‰ã‚’ç”Ÿæˆ
 
         foreach (int j in gameData.cardLists)
         {
@@ -68,7 +68,7 @@ public class CardSelect : MonoBehaviour
         }
         */
 
-        //ƒŠƒXƒg‚É‹ó‚ÌƒJ[ƒh‚ğ¶¬
+        //ãƒªã‚¹ãƒˆã«ç©ºã®ã‚«ãƒ¼ãƒ‰ã‚’ç”Ÿæˆ
         for (int i = 0; i < 5; i++)
         {
             GameObject card = magicCardGenerator.GenerateEmptyCard();
@@ -90,17 +90,17 @@ public class CardSelect : MonoBehaviour
 
     public void SelectCard(MagicEntity magicEntity)
     {
-        //–‚–@‚ÌƒŠƒXƒg‚É“ü‚ê‚é
+        //é­”æ³•ã®ãƒªã‚¹ãƒˆã«å…¥ã‚Œã‚‹
         SelectedCard selected;
         selected.MagicEntity = magicEntity;
         selected.Card = selectedCards[selectedNum].Card;
         selectedCards[selectedNum] = selected;
 
-        //ƒJ[ƒh‚ÌŒ©‚½–Ú‚ğ•\¦‚·‚é
+        //ã‚«ãƒ¼ãƒ‰ã®è¦‹ãŸç›®ã‚’è¡¨ç¤ºã™ã‚‹
         selectedCards[selectedNum].Card.SetActive(true);
         magicCardGenerator.CardView(selectedCards[selectedNum].Card,magicEntity);
 
-        //Card‚ğİ’è‚·‚é
+        //Cardã‚’è¨­å®šã™ã‚‹
         Card card = selectedCards[selectedNum].Card.GetComponent<Card>();
         card.state = CardState.SELECTED_LIST;
         card.magicEntity = magicEntity;

@@ -1,32 +1,32 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ReturnTilePosition : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> tiles = new List<GameObject>(); //‘S‚Ä‚Ìƒ^ƒCƒ‹iƒQ[ƒ€ƒIƒuƒWƒFƒNƒgj‚ğŠi”[
+    [SerializeField] private List<GameObject> tiles = new List<GameObject>(); //å…¨ã¦ã®ã‚¿ã‚¤ãƒ«ï¼ˆã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆï¼‰ã‚’æ ¼ç´
     private int i;
    
     public Vector3 TileSearch(int x,int y,Vector3 beforepos)
     {
         i = 0;
 
-        while ((y != tiles[i].GetComponent<TileCoordinate>().coordinate.y)) //ƒ^ƒCƒ‹‚ÌyÀ•WŒŸõ
+        while ((y != tiles[i].GetComponent<TileCoordinate>().coordinate.y)) //ã‚¿ã‚¤ãƒ«ã®yåº§æ¨™æ¤œç´¢
         {
             i = i + 1;
         }
 
-        while (x != tiles[i].GetComponent<TileCoordinate>().coordinate.x) //ƒ^ƒCƒ‹‚ÌxÀ•WŒŸõ
+        while (x != tiles[i].GetComponent<TileCoordinate>().coordinate.x) //ã‚¿ã‚¤ãƒ«ã®xåº§æ¨™æ¤œç´¢
         {
             i = i + 1;
         }
 
-        if(tiles[i].GetComponent<TileCoordinate>().coordinate.Close == true) //ƒ^ƒCƒ‹‚ÉáŠQ•¨‚ª‚ ‚é‚©‚Ç‚¤‚©‚Ìbool•Ï”‚ğæ“¾
+        if(tiles[i].GetComponent<TileCoordinate>().coordinate.Close == true) //ã‚¿ã‚¤ãƒ«ã«éšœå®³ç‰©ãŒã‚ã‚‹ã‹ã©ã†ã‹ã®boolå¤‰æ•°ã‚’å–å¾—
         {
-            return beforepos; //¡‚¢‚éƒ|ƒWƒVƒ‡ƒ“‚ğ•Ô‚µ‚Äi‚Ü‚È‚¢‚æ‚¤‚É‚·‚é
+            return beforepos; //ä»Šã„ã‚‹ãƒã‚¸ã‚·ãƒ§ãƒ³ã‚’è¿”ã—ã¦é€²ã¾ãªã„ã‚ˆã†ã«ã™ã‚‹
         }
 
-        return tiles[i].transform.position; //i‚İ‚½‚¢•ûŒü‚Ìƒ^ƒCƒ‹‚Ìƒ|ƒWƒVƒ‡ƒ“‚ğ•Ô‚·
+        return tiles[i].transform.position; //é€²ã¿ãŸã„æ–¹å‘ã®ã‚¿ã‚¤ãƒ«ã®ãƒã‚¸ã‚·ãƒ§ãƒ³ã‚’è¿”ã™
     }
 
 }

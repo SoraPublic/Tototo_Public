@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -48,7 +48,7 @@ public class CardSelectManager : MonoBehaviour
 
     public void SetCardNum(int num)
     {
-        text.text = "–‚–@‚ğ‘I‘ğ\n(" + num + " / 5)";
+        text.text = "é­”æ³•ã‚’é¸æŠ\n(" + num + " / 5)";
         cardNum = num;
     }
 }

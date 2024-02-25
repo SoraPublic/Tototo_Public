@@ -1,10 +1,10 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    //ƒvƒŒƒCƒ„[‚ÌŠÇ—H
+    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ç®¡ç†ï¼Ÿ
 
     public int nowX;
     public int nowY;

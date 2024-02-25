@@ -1,4 +1,4 @@
-using Enemy;
+ï»¿using Enemy;
 using System;
 using System.Collections.Generic;
 using UnityEditor;
@@ -61,13 +61,13 @@ public class ESkillFactorEditor : PropertyDrawer
                 {
                     _property.RowCount = 1;
                     fieldRect.y += LineHeight;
-                    EditorGUI.LabelField(new Rect(fieldRect), "UŒ‚‰‰o", EditorStyles.boldLabel);
+                    EditorGUI.LabelField(new Rect(fieldRect), "æ”»æ’ƒæ¼”å‡º", EditorStyles.boldLabel);
                     fieldRect.y += LineHeight;
                     EditorGUI.PropertyField(new Rect(fieldRect), _property.Direction);
                     _property.RowCount += 2;
 
                     fieldRect.y += LineHeight;
-                    EditorGUI.LabelField(new Rect(fieldRect), "ƒGƒCƒ€í—Ş", EditorStyles.boldLabel);
+                    EditorGUI.LabelField(new Rect(fieldRect), "ã‚¨ã‚¤ãƒ ç¨®é¡", EditorStyles.boldLabel);
                     fieldRect.y += LineHeight;
                     EditorGUI.PropertyField(new Rect(fieldRect), _property.AimKind);
                     _property.RowCount += 2;
@@ -81,7 +81,7 @@ public class ESkillFactorEditor : PropertyDrawer
                             case AimKindEnemyAttack.RandomHorizontal:
                             case AimKindEnemyAttack.RandomVertical:
                                 fieldRect.y += LineHeight;
-                                EditorGUI.LabelField(new Rect(fieldRect), "ƒ^[ƒQƒbƒg”(ŒÂ or s or —ñ)", EditorStyles.boldLabel);
+                                EditorGUI.LabelField(new Rect(fieldRect), "ã‚¿ãƒ¼ã‚²ãƒƒãƒˆæ•°(å€‹ or è¡Œ or åˆ—)", EditorStyles.boldLabel);
                                 fieldRect.y += LineHeight;
                                 EditorGUI.PropertyField(new Rect(fieldRect), _property.AimCount);
                                 _property.RowCount += 2;
@@ -89,7 +89,7 @@ public class ESkillFactorEditor : PropertyDrawer
 
                             case AimKindEnemyAttack.Select:
                                 fieldRect.y += LineHeight;
-                                EditorGUI.LabelField(new Rect(fieldRect), "À•Ww’è(Select)", EditorStyles.boldLabel);
+                                EditorGUI.LabelField(new Rect(fieldRect), "åº§æ¨™æŒ‡å®š(Select)", EditorStyles.boldLabel);
                                 fieldRect.y += LineHeight;
                                 EditorGUI.PropertyField(new Rect(fieldRect), _property.Coordinate);
                                 if (_property.Coordinate.isExpanded)
@@ -106,7 +106,7 @@ public class ESkillFactorEditor : PropertyDrawer
                     }
 
                     fieldRect.y += LineHeight;
-                    EditorGUI.LabelField(new Rect(fieldRect), "UŒ‚”­¶‚Ü‚Å‚Ì’x‰„‚Ì—L–³", EditorStyles.boldLabel);
+                    EditorGUI.LabelField(new Rect(fieldRect), "æ”»æ’ƒç™ºç”Ÿã¾ã§ã®é…å»¶ã®æœ‰ç„¡", EditorStyles.boldLabel);
                     fieldRect.y += LineHeight;
                     EditorGUI.PropertyField(new Rect(fieldRect), _property.IsDelay);
                     _property.RowCount += 2;
@@ -114,7 +114,7 @@ public class ESkillFactorEditor : PropertyDrawer
                     if (_property.IsDelay.boolValue)
                     {
                         fieldRect.y += LineHeight;
-                        EditorGUI.LabelField(new Rect(fieldRect), "’x‰„‚Ì’·‚³", EditorStyles.boldLabel);
+                        EditorGUI.LabelField(new Rect(fieldRect), "é…å»¶ã®é•·ã•", EditorStyles.boldLabel);
                         fieldRect.y += LineHeight;
                         EditorGUI.PropertyField(new Rect(fieldRect), _property.DelayTime);
                         _property.RowCount += 2;
@@ -122,7 +122,7 @@ public class ESkillFactorEditor : PropertyDrawer
                         if(aimKind != AimKindEnemyAttack.RandomPoint)
                         {
                             fieldRect.y += LineHeight;
-                            EditorGUI.LabelField(new Rect(fieldRect), "UŒ‚‚Ì•ûŒü(True‚ÅÀ•W‚ª‘å‚«‚¢‡)", EditorStyles.boldLabel);
+                            EditorGUI.LabelField(new Rect(fieldRect), "æ”»æ’ƒã®æ–¹å‘(Trueã§åº§æ¨™ãŒå¤§ãã„é †)", EditorStyles.boldLabel);
                             fieldRect.y += LineHeight;
                             EditorGUI.PropertyField(new Rect(fieldRect), _property.ReverseMode);
                             _property.RowCount += 2;
@@ -130,7 +130,7 @@ public class ESkillFactorEditor : PropertyDrawer
                     }
 
                     fieldRect.y += LineHeight;
-                    EditorGUI.LabelField(new Rect(fieldRect), "‰ñ•œŒø‰Ê‚Ì—L–³", EditorStyles.boldLabel);
+                    EditorGUI.LabelField(new Rect(fieldRect), "å›å¾©åŠ¹æœã®æœ‰ç„¡", EditorStyles.boldLabel);
                     fieldRect.y += LineHeight;
                     EditorGUI.PropertyField(new Rect(fieldRect), _property.IsHeal);
                     _property.RowCount += 2;
@@ -138,7 +138,7 @@ public class ESkillFactorEditor : PropertyDrawer
                     if (_property.IsHeal.boolValue)
                     {
                         fieldRect.y += LineHeight;
-                        EditorGUI.LabelField(new Rect(fieldRect), "‰ñ•œ—Ê", EditorStyles.boldLabel);
+                        EditorGUI.LabelField(new Rect(fieldRect), "å›å¾©é‡", EditorStyles.boldLabel);
                         fieldRect.y += LineHeight;
                         EditorGUI.PropertyField(new Rect(fieldRect), _property.HealPoint);
                         _property.RowCount += 2;
@@ -152,7 +152,7 @@ public class ESkillFactorEditor : PropertyDrawer
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
         Init(property);
-        // (EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing) x s” ‚Å•`‰æ—Ìˆæ‚Ì‚‚³‚ğ‹‚ß‚é
+        // (EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing) x è¡Œæ•° ã§æç”»é ˜åŸŸã®é«˜ã•ã‚’æ±‚ã‚ã‚‹
         return LineHeight * (property.isExpanded ? _property.RowCount : 1);
     }
 }

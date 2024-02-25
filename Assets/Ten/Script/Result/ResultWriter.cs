@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
-using System.Linq;
+using UnityEngine;
 
 public class ResultWriter : MonoBehaviour
 {
@@ -39,7 +37,6 @@ public class ResultWriter : MonoBehaviour
 
         text_terms = resultTerms.GetComponent<TextMeshProUGUI>();
 
-        //�����̐��̔���
         if (result.clear >= resultEntity.clear)
         {
             marks[0] = "<sprite=1>";

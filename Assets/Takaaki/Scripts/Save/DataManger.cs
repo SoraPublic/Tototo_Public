@@ -1,4 +1,4 @@
-using System.IO;
+ï»¿using System.IO;
 using UnityEngine;
 
 public class DataManger 
@@ -7,61 +7,61 @@ public class DataManger
     {
         string filePath = Application.dataPath + "/" + SavePathName.GameDataFile;
 
-        // ƒZ[ƒuƒf[ƒ^‚ğJSONŒ`®‚Ì•¶š—ñ‚É•ÏŠ·
+        // ã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿ã‚’JSONå½¢å¼ã®æ–‡å­—åˆ—ã«å¤‰æ›
         string json = JsonUtility.ToJson(gameData);
 
         byte[] arrEncrypted = ConversionManager.ConvertIntoCipher(json);
 
-        // w’è‚µ‚½ƒpƒX‚Éƒtƒ@ƒCƒ‹‚ğì¬
+        // æŒ‡å®šã—ãŸãƒ‘ã‚¹ã«ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œæˆ
         FileStream file = new FileStream(filePath, FileMode.Create, FileAccess.Write);
 
-        // ƒtƒ@ƒCƒ‹‚É•Û‘¶
+        // ãƒ•ã‚¡ã‚¤ãƒ«ã«ä¿å­˜
         file.Write(arrEncrypted, 0, arrEncrypted.Length);
 
-        // ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+        // ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
         if (file != null)
         {
             file.Close();
         }
-        Debug.Log("ƒZ[ƒuŠ®—¹");
+        //Debug.Log("ã‚»ãƒ¼ãƒ–å®Œäº†");
     }
 
     /// <summary>
-    /// GameData‚ÌLoad@ƒQ[ƒ€ŠJn‚É‚Ì‚İ“Ç‚İo‚µ
+    /// GameDataã®Loadã€€ã‚²ãƒ¼ãƒ é–‹å§‹æ™‚ã«ã®ã¿èª­ã¿å‡ºã—
     /// </summary>
     public GameData LoadGameData()
     {
         string filePath = Application.dataPath +"/" + SavePathName.GameDataFile;
         GameData gameData = new GameData();
 
-        //Šù‚Éƒf[ƒ^‚ª‘¶İ‚·‚éê‡
+        //æ—¢ã«ãƒ‡ãƒ¼ã‚¿ãŒå­˜åœ¨ã™ã‚‹å ´åˆ
         if (File.Exists(filePath))
         {
-            //ƒtƒ@ƒCƒ‹ƒ‚[ƒh‚ğƒI[ƒvƒ“‚É‚·‚é
+            //ãƒ•ã‚¡ã‚¤ãƒ«ãƒ¢ãƒ¼ãƒ‰ã‚’ã‚ªãƒ¼ãƒ—ãƒ³ã«ã™ã‚‹
             FileStream file = new FileStream(filePath, FileMode.Open, FileAccess.Read);
 
-            // ƒtƒ@ƒCƒ‹“Ç‚İ‚İ
+            // ãƒ•ã‚¡ã‚¤ãƒ«èª­ã¿è¾¼ã¿
             byte[] arrRead = File.ReadAllBytes(filePath);
 
-            //•¡‡‰»‚È‚Ç‚È‚Ç
+            //è¤‡åˆåŒ–ãªã©ãªã©
             string decryptStr = ConversionManager.ConvertIntoJson(arrRead);
 
             gameData = JsonUtility.FromJson<GameData>(decryptStr);
 
-            // ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+            // ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
             if (file != null)
             {
                 file.Close();
             }
 
-            Debug.Log("Load : Šù‘¶ƒf[ƒ^‚ ‚è");
+            //Debug.Log("Load : æ—¢å­˜ãƒ‡ãƒ¼ã‚¿ã‚ã‚Š");
         }
-        //ƒf[ƒ^‚ª‚È‚¢B‰‚ß‚©‚ç‚Ìê‡
+        //ãƒ‡ãƒ¼ã‚¿ãŒãªã„ã€‚åˆã‚ã‹ã‚‰ã®å ´åˆ
         else
         {
-            //GameData‚É‰Šú’l‚ğ“ü—Í‚µ‚Ä‚¢‚é‚Ì‚Å‰½‚à‚µ‚È‚­‚Ä‚à‘åä•v(‚½‚Ô‚ñ)
+            //GameDataã«åˆæœŸå€¤ã‚’å…¥åŠ›ã—ã¦ã„ã‚‹ã®ã§ä½•ã‚‚ã—ãªãã¦ã‚‚å¤§ä¸ˆå¤«(ãŸã¶ã‚“)
 
-            Debug.Log("Load : Šù‘¶ƒf[ƒ^‚È‚µ");
+            //Debug.Log("Load : æ—¢å­˜ãƒ‡ãƒ¼ã‚¿ãªã—");
 
             SaveGameData(gameData);
         }

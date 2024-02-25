@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -46,18 +46,18 @@ public class MagicActivate : MonoBehaviour
     {
         if (count > 0)
         {
-            //Debug.Log("ƒN[ƒ‹ƒ^ƒCƒ€‚Å‚·");
+            //Debug.Log("ã‚¯ãƒ¼ãƒ«ã‚¿ã‚¤ãƒ ã§ã™");
             return;
         }
 
-        //Debug.Log("–‚–@‚Ì”­“®");
+        //Debug.Log("é­”æ³•ã®ç™ºå‹•");
 
-        /* ƒN[ƒ‹ƒ^ƒCƒ€‚Ìİ’è */
+        /* ã‚¯ãƒ¼ãƒ«ã‚¿ã‚¤ãƒ ã®è¨­å®š */
         isCheck = false;
 
         count = PlayerStatus.coolTime;
 
-        /* ƒXƒLƒ‹‚Ìˆ— */
+        /* ã‚¹ã‚­ãƒ«ã®å‡¦ç† */
         if (playerStatus == null)
         {
             playerStatus = PlayerStatus.instance;
@@ -67,7 +67,7 @@ public class MagicActivate : MonoBehaviour
         playerStatus.ApplyBuff(skill);
 
 
-        /* UŒ‚‚Ìˆ—  */
+        /* æ”»æ’ƒã®å‡¦ç†  */
         if (enemyController == null)
         {
             enemyController = StageManager.instance.enemy;

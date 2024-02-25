@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -39,7 +39,7 @@ public class TitleManager : MonoBehaviour
         string str = stageName + 5.ToString("00");
         ResultData result = resultManager.LoadResultData(Application.dataPath + "/" + SavePathName.StageFile(str));
 
-        if (result.clear == 0) //ƒNƒŠƒA‚µ‚Ä‚¢‚È‚¢
+        if (result.clear == 0) //ã‚¯ãƒªã‚¢ã—ã¦ã„ãªã„
         {
             return false;
         }

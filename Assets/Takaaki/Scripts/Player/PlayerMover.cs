@@ -1,11 +1,11 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
 public class PlayerMover : MonoBehaviour
 {
-    //ƒvƒŒƒCƒ„[‚ÌˆÚ“®
+    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ç§»å‹•
 
     private TileManager tileManager;
     private StageManager stageManager;
@@ -32,45 +32,45 @@ public class PlayerMover : MonoBehaviour
         count -= Time.deltaTime;
     }
 
-    //ˆÚ“®‚Ì”»’è
+    //ç§»å‹•ã®åˆ¤å®š
     public void MoveCheck(int x, int y)
     {
         int nextX = playerManager.nowX + x;
         int nextY = playerManager.nowY + y;
 
-        //ˆÚ“®•s‰Â‚ğŒŸ’m
+        //ç§»å‹•ä¸å¯ã‚’æ¤œçŸ¥
         if ( 0 < count ) 
         {
-            Debug.Log("ˆÚ“®•s‰ÂFˆÚ“®’†");
+            //Debug.Log("ç§»å‹•ä¸å¯ï¼šç§»å‹•ä¸­");
             return;
         }
         if (nextX < 0 || stageManager.row <= nextX)
         {
-            Debug.Log("ˆÚ“®•s‰ÂF”ÍˆÍŠO");
+            //Debug.Log("ç§»å‹•ä¸å¯ï¼šç¯„å›²å¤–");
             return;
         }
         if (nextY < 0 || stageManager.column <= nextY)
         {
-            Debug.Log("ˆÚ“®•s‰ÂF”ÍˆÍŠO");
+            //Debug.Log("ç§»å‹•ä¸å¯ï¼šç¯„å›²å¤–");
             return;
         }
         if (tileManager.GetTile(nextX, nextY).situation == TileState.TileSituation.Block) 
         {
-            Debug.Log("ˆÚ“®•s‰ÂFáŠQ•¨‚ ‚è");
+            //Debug.Log("ç§»å‹•ä¸å¯ï¼šéšœå®³ç‰©ã‚ã‚Š");
             return;
         }
         if (tileManager.GetTile(nextX, nextY).situation == TileState.TileSituation.Empty)
         {
-            Debug.Log("ˆÚ“®•s‰ÂFƒ^ƒCƒ‹‚È‚µ");
+            //Debug.Log("ç§»å‹•ä¸å¯ï¼šã‚¿ã‚¤ãƒ«ãªã—");
             return;
         }
         if(stageManager.playerState == PlayerState.Stop)
         {
-            Debug.Log("ˆÚ“®•s‰ÂF”í’e’†");
+            //Debug.Log("ç§»å‹•ä¸å¯ï¼šè¢«å¼¾ä¸­");
             return;
         }
 
-        //•ûŒü‚ğ•ÏX
+        //æ–¹å‘ã‚’å¤‰æ›´
         float angle = x * 90 + y*(y + 1) * 90;
         Transform player = this.gameObject.transform;
         player.DORotate(new Vector3(0f,angle,0f),0f);
@@ -82,7 +82,7 @@ public class PlayerMover : MonoBehaviour
 
     }
 
-    //x,y‚Ìî•ñ‚©‚çˆÚ“®
+    //x,yã®æƒ…å ±ã‹ã‚‰ç§»å‹•
     public void MovePlayer(int x, int y, float moveTime) 
     {
         TileState preTile = tileManager.GetTile(playerManager.nowX, playerManager.nowY);
@@ -107,7 +107,7 @@ public class PlayerMover : MonoBehaviour
     }
     
 
-    //vector3‚Ìî•ñ‚©‚çˆÚ“®
+    //vector3ã®æƒ…å ±ã‹ã‚‰ç§»å‹•
 
     private void MovePlayer(Vector3 vector3, float moveTime)
     {

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,27 +6,27 @@ using UnityEngine;
 
 public class MagicEntity : ScriptableObject
 {
-    //Œ`
-    [Header("–‚–@w‚ÌŒ`")]
+    //å½¢
+    [Header("é­”æ³•é™£ã®å½¢")]
     [Range(0, 1)]
     public int[] array;
 
 
 
-    //[Header("UŒ‚—Í")] public float attackDamage;
+    //[Header("æ”»æ’ƒåŠ›")] public float attackDamage;
 
-    [Header("ƒŒƒxƒ‹")] public int level;
-
-
-    //”\—Í
-    [Header("ƒXƒLƒ‹")] public Skill skill;
+    [Header("ãƒ¬ãƒ™ãƒ«")] public int level;
 
 
+    //èƒ½åŠ›
+    [Header("ã‚¹ã‚­ãƒ«")] public Skill skill;
 
-    //‰æ‘œ
-    //‚Ü‚¾g‚í‚È‚¢
+
+
+    //ç”»åƒ
+    //ã¾ã ä½¿ã‚ãªã„
     public Sprite icon;
 
-    [Header("ƒJ[ƒh‚Ì’Ê‚µ”Ô†")]
+    [Header("ã‚«ãƒ¼ãƒ‰ã®é€šã—ç•ªå·")]
     public int cardNum;
 }

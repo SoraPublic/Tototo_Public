@@ -1,14 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-[System.Serializable]
+ï»¿[System.Serializable]
 public class ResultData
 {
-    public int clear = 0;//ƒNƒŠƒA‰ñ”
-    public float time = 1000;//“¢”°ŠÔ
-    public int hit = 1000;//”í’e‰ñ”
-    public int star = 0;//¯
-    public int oldGotCard = 0;//‰ß‹‚ÉŠl“¾‚µ‚½ƒJ[ƒh‚Ì‘”
-    public int nowGetCard = 0;//¡‰ñƒJ[ƒh‚ğŠl“¾‚·‚é–‡”
+    public int clear = 0;//ã‚¯ãƒªã‚¢å›æ•°
+    public float time = 1000;//è¨ä¼æ™‚é–“
+    public int hit = 1000;//è¢«å¼¾å›æ•°
+    public int star = 0;//æ˜Ÿ
+    public int oldGotCard = 0;//éå»ã«ç²å¾—ã—ãŸã‚«ãƒ¼ãƒ‰ã®ç·æ•°
+    public int nowGetCard = 0;//ä»Šå›ã‚«ãƒ¼ãƒ‰ã‚’ç²å¾—ã™ã‚‹æšæ•°
 }

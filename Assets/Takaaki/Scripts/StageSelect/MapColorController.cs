@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,11 +6,11 @@ public class MapColorController : MonoBehaviour
 {
     Material[] mat;
 
-    void Start()    //ƒ}ƒeƒŠƒAƒ‹‚ğ”z—ñ‚Åæ“¾
+    void Start()    //ãƒãƒ†ãƒªã‚¢ãƒ«ã‚’é…åˆ—ã§å–å¾—
     {
         mat = this.GetComponent<Renderer>().materials;
 
-        //ƒVƒF[ƒ_[‚ÌFó‘Ô‚ğfalse(•F)‚É‚·‚é–½—ß
+        //ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã®è‰²çŠ¶æ…‹ã‚’false(é»’è‰²)ã«ã™ã‚‹å‘½ä»¤
         foreach (Material rend in mat)
         {
             rend.DisableKeyword("IS_CLEARED");

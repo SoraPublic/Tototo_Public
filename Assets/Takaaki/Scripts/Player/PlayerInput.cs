@@ -1,10 +1,10 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    //ƒvƒŒƒCƒ„[‚ÉŠÖ‚·‚é“ü—Í‚ğŠÇ—
+    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã«é–¢ã™ã‚‹å…¥åŠ›ã‚’ç®¡ç†
 
     private PlayerMover playerMover;
 

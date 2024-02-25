@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,8 +7,8 @@ using UnityEngine.EventSystems;
 
 public class TileButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 {
-    //•¨—•”•ª
-    //Á‚·—\’è
+    //ç‰©ç†éƒ¨åˆ†
+    //æ¶ˆã™äºˆå®š
 
 
     private TileState tileState;
@@ -31,13 +31,13 @@ public class TileButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     {
-        // ƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚é
+        // ãƒœã‚¿ãƒ³ãŒæŠ¼ã•ã‚Œã‚‹
         tileState.isPressing = true;
     }
 
     void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
     {
-        // ƒ{ƒ^ƒ“‚ª—£‚³‚ê‚é
+        // ãƒœã‚¿ãƒ³ãŒé›¢ã•ã‚Œã‚‹
         tileState.isPressing = false;
     }
 }

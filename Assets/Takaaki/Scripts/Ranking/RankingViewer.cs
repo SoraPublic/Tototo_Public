@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using NCMB;
@@ -27,7 +27,7 @@ namespace naichilab {
         }
 
         /// <summary>
-        /// ƒ‰ƒ“ƒLƒ“ƒOæ“¾••\¦
+        /// ãƒ©ãƒ³ã‚­ãƒ³ã‚°å–å¾—ï¼†è¡¨ç¤º
         /// </summary>
         /// <returns>The ranking board.</returns>
         private IEnumerator LoadRankingBoard()
@@ -40,7 +40,7 @@ namespace naichilab {
 
             var msg = Instantiate(readingNodePrefab, scrollViewContent);
 
-            //2017.2.0b3‚Ì•`‰æ‚³‚ê‚È‚¢ƒoƒOb’è‘Î‰
+            //2017.2.0b3ã®æç”»ã•ã‚Œãªã„ãƒã‚°æš«å®šå¯¾å¿œ
             MaskOffOn();
 
             var so = new YieldableNcmbQuery<NCMBObject>(_board.ClassName);
@@ -56,7 +56,7 @@ namespace naichilab {
 
             yield return so.FindAsync();
 
-            Debug.Log("ƒf[ƒ^æ“¾ : " + so.Count.ToString() + "Œ");
+            Debug.Log("ãƒ‡ãƒ¼ã‚¿å–å¾— : " + so.Count.ToString() + "ä»¶");
             Destroy(msg);
 
             if (so.Error != null)
@@ -74,7 +74,7 @@ namespace naichilab {
                     rankNode.NameText.text = r[COLUMN_NAME].ToString();
 
                     var s = _board.BuildScore(r[COLUMN_SCORE].ToString());
-                    rankNode.ScoreText.text = s != null ? s.TextForDisplay : "ƒGƒ‰[";
+                    rankNode.ScoreText.text = s != null ? s.TextForDisplay : "ã‚¨ãƒ©ãƒ¼";
 
                     //                    Debug.Log(r[COLUMN_SCORE].ToString());
                 }
@@ -87,8 +87,8 @@ namespace naichilab {
 
         private void MaskOffOn()
         {
-            //2017.2.0b3‚Å‚È‚º‚©ScrollViewContent‚ğ’Ç‰Á‚µ‚Ä‚à•`‰æ‚³‚ê‚È‚¢ê‡‚ª‚ ‚éB
-            //emask‚ğOFF/ON‚·‚é‚Æ’¼‚é‚Ì‚Å–³—‚â‚èEEE
+            //2017.2.0b3ã§ãªãœã‹ScrollViewContentã‚’è¿½åŠ ã—ã¦ã‚‚æç”»ã•ã‚Œãªã„å ´åˆãŒã‚ã‚‹ã€‚
+            //è¦ªmaskã‚’OFF/ONã™ã‚‹ã¨ç›´ã‚‹ã®ã§ç„¡ç†ã‚„ã‚Šãƒ»ãƒ»ãƒ»
             var m = scrollViewContent.parent.GetComponent<Mask>();
             m.enabled = false;
             m.enabled = true;

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,11 +6,11 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private ReturnTilePosition ReturnTilePosition;
 
-    private int nowx, nowy; //Œ»İ‚ÌÀ•W
+    private int nowx, nowy; //ç¾åœ¨ã®åº§æ¨™
     private bool close;
-    private Vector3 target; //is•ûŒü‚Ìƒ^ƒCƒ‹‚ÌPosition
+    private Vector3 target; //é€²è¡Œæ–¹å‘ã®ã‚¿ã‚¤ãƒ«ã®Position
     private int x, y;
-    [SerializeField] private float step = 2f; //ˆÚ“®‘¬“x
+    [SerializeField] private float step = 2f; //ç§»å‹•é€Ÿåº¦
     
     private Vector3 latestPos;
     void Start()
@@ -20,28 +20,28 @@ public class PlayerController : MonoBehaviour
  
     void Update()
     {
-        Vector3 diff = transform.position - latestPos;   //‘O‰ñ‚©‚ç‚Ç‚±‚Éi‚ñ‚¾‚©‚ğƒxƒNƒgƒ‹‚Åæ“¾
-        latestPos = transform.position;  //‘O‰ñ‚ÌPosition‚ÌXV
+        Vector3 diff = transform.position - latestPos;   //å‰å›ã‹ã‚‰ã©ã“ã«é€²ã‚“ã ã‹ã‚’ãƒ™ã‚¯ãƒˆãƒ«ã§å–å¾—
+        latestPos = transform.position;  //å‰å›ã®Positionã®æ›´æ–°
 
-        nowStateCheck(); //Œ»İ‚¢‚éƒ^ƒCƒ‹‚Ìî•ñ‚ğæ“¾
-        x = nowx; //Œ»İ‚ÌÀ•W‚ğ•Ï”‚É‘ã“ü
+        nowStateCheck(); //ç¾åœ¨ã„ã‚‹ã‚¿ã‚¤ãƒ«ã®æƒ…å ±ã‚’å–å¾—
+        x = nowx; //ç¾åœ¨ã®åº§æ¨™ã‚’å¤‰æ•°ã«ä»£å…¥
         y = nowy;
 
-        if ((this.transform.position.x == target.x) && (this.transform.position.z == target.z)) //©g‚ªˆÚ“®’†‚Å‚È‚¯‚ê‚ÎˆÚ“®‰Â”\
+        if ((this.transform.position.x == target.x) && (this.transform.position.z == target.z)) //è‡ªèº«ãŒç§»å‹•ä¸­ã§ãªã‘ã‚Œã°ç§»å‹•å¯èƒ½
         {
             TargetChange();
         }
 
         if (diff.magnitude > 0.01f)
         {
-            transform.rotation = Quaternion.LookRotation(diff); //Œü‚«‚ğ•ÏX‚·‚é
+            transform.rotation = Quaternion.LookRotation(diff); //å‘ãã‚’å¤‰æ›´ã™ã‚‹
         }
 
-        this.transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.x,this.transform.position.y,target.z), step * Time.deltaTime); //ˆÚ“®ˆ—i¡‚Íx‚Æz‚µ‚©“®‚©‚µ‚Ä‚¢‚È‚¢j
+        this.transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.x,this.transform.position.y,target.z), step * Time.deltaTime); //ç§»å‹•å‡¦ç†ï¼ˆä»Šã¯xã¨zã—ã‹å‹•ã‹ã—ã¦ã„ãªã„ï¼‰
       
     }
 
-    void TargetChange() //i‚İ‚½‚¢ƒ^ƒCƒ‹‚ÌÀ•W‚ğXV‚·‚éŠÖ”
+    void TargetChange() //é€²ã¿ãŸã„ã‚¿ã‚¤ãƒ«ã®åº§æ¨™ã‚’æ›´æ–°ã™ã‚‹é–¢æ•°
     {
         if (Input.GetKeyDown(KeyCode.W)) 
         {
@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void nowStateCheck() //^‰º‚ÉƒŒƒC‚ğ”ò‚Î‚µ‚Äƒ^ƒCƒ‹‚ÌÀ•W‚ğæ“¾i‚»‚ê‚¼‚ê‚Ìƒ^ƒCƒ‹‚Í\‘¢‘Ì‚ÅÀ•W‚ğ©•ª‚Å‚Á‚Ä‚¢‚éj
+    void nowStateCheck() //çœŸä¸‹ã«ãƒ¬ã‚¤ã‚’é£›ã°ã—ã¦ã‚¿ã‚¤ãƒ«ã®åº§æ¨™ã‚’å–å¾—ï¼ˆãã‚Œãã‚Œã®ã‚¿ã‚¤ãƒ«ã¯æ§‹é€ ä½“ã§åº§æ¨™ã‚’è‡ªåˆ†ã§æŒã£ã¦ã„ã‚‹ï¼‰
     {        
         RaycastHit hit;
         if (Physics.Raycast(gameObject.transform.position, Vector3.down, out hit, 6.0f))

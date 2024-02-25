@@ -1,10 +1,10 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TileCheck : MonoBehaviour
 {
-    //˜_—•”•ª•ÏX‚Í‚Æ‚è‚ ‚¦‚¸‚È‚µ
+    //è«–ç†éƒ¨åˆ†å¤‰æ›´ã¯ã¨ã‚Šã‚ãˆãšãªã—
 
     [SerializeField] private MagicEntity shape1;
     [SerializeField] private MagicEntity shape2;
@@ -40,66 +40,66 @@ public class TileCheck : MonoBehaviour
     {
         if (isCheck == false)
         {
-            //€”õ‚Å‚«‚Ä‚¢‚È‚¢‚Ì‚ÅA‰½‚à‚µ‚È‚¢
-            //CardSelect’†
+            //æº–å‚™ã§ãã¦ã„ãªã„ã®ã§ã€ä½•ã‚‚ã—ãªã„
+            //CardSelectä¸­
             return;
         }
 
         if (ShapeCheck(tileStates, MC1))
         {
-            //Debug.Log("shape1‚ ‚è");
+            //Debug.Log("shape1ã‚ã‚Š");
             magicManager.magics[0].Active();
         }
         else
         {
-            //Debug.Log("shape1‚È‚µ");
+            //Debug.Log("shape1ãªã—");
         }
         if (ShapeCheck(tileStates, MC2))
         {
-            //Debug.Log("shape2‚ ‚è");
+            //Debug.Log("shape2ã‚ã‚Š");
             magicManager.magics[1].Active();
         }
         else
         {
-            //Debug.Log("shape2‚È‚µ");
+            //Debug.Log("shape2ãªã—");
         }
         if (ShapeCheck(tileStates, MC3))
         {
-            //Debug.Log("shape3‚ ‚è");
+            //Debug.Log("shape3ã‚ã‚Š");
             magicManager.magics[2].Active();
         }
         else
         {
-            //Debug.Log("shape3‚È‚µ");
+            //Debug.Log("shape3ãªã—");
         }
         if (ShapeCheck(tileStates, MC4))
         {
-            //Debug.Log("shape4‚ ‚è");
+            //Debug.Log("shape4ã‚ã‚Š");
             magicManager.magics[3].Active();
         }
         else
         {
-            //Debug.Log("shape4‚È‚µ");
+            //Debug.Log("shape4ãªã—");
         }
         if (ShapeCheck(tileStates, MC5))
         {
             //
-            //Debug.Log("shape5‚ ‚è");
+            //Debug.Log("shape5ã‚ã‚Š");
             magicManager.magics[4].Active();
         }
         else
         {
-            //Debug.Log("shape5‚È‚µ");
+            //Debug.Log("shape5ãªã—");
         }
     }
 
     /***********************************************************************************/
-    /*  “¯‚É¬—§‰Â”\         */
+    /*  åŒæ™‚ã«æˆç«‹å¯èƒ½         */
 
     private bool ShapeCheck(TileState[] tileStates, int[,] MC)
     {
 
-        //tile‚Ì”‚ªshape‚Ì”‚É–‚½‚È‚¢ê‡‚Íshape‚È‚µ
+        //tileã®æ•°ãŒshapeã®æ•°ã«æº€ãŸãªã„å ´åˆã¯shapeãªã—
         if (TileNumCheck(tileStates) < LevelCheck(MC))
         {
             return false;
@@ -108,7 +108,7 @@ public class TileCheck : MonoBehaviour
         int xSize = MC.GetLength(0);
         int ySize = MC.GetLength(1);
 
-        //tile‘¤
+        //tileå´
 
         for (int i=0; i <= tileSize - xSize;i++) 
         {
@@ -147,7 +147,7 @@ public class TileCheck : MonoBehaviour
 
 
 
-    //shape‚Ìtile‚Ì”‚ğ”‚¦‚é
+    //shapeã®tileã®æ•°ã‚’æ•°ãˆã‚‹
     private int LevelCheck(int[,] MC)
     {
         int num = 0;
@@ -163,7 +163,7 @@ public class TileCheck : MonoBehaviour
         return num;
     }
 
-    //Š£‚¢‚½tile‚Ì”‚ğ”‚¦‚é
+    //ä¹¾ã„ãŸtileã®æ•°ã‚’æ•°ãˆã‚‹
     private int TileNumCheck(TileState[] tileStates)
     {
         int num = 0;
@@ -175,14 +175,14 @@ public class TileCheck : MonoBehaviour
         return num;
     }
 
-    //1ŸŒ³”z—ñ‚Å³•ûŒ`‚Å“ü—Í‚³‚ê‚½‚à‚Ì‚ğ2ŸŒ³”z—ñ‚Ì“KØ‚È‘å‚«‚³‚È}Œ`‚É•ÏX
+    //1æ¬¡å…ƒé…åˆ—ã§æ­£æ–¹å½¢ã§å…¥åŠ›ã•ã‚ŒãŸã‚‚ã®ã‚’2æ¬¡å…ƒé…åˆ—ã®é©åˆ‡ãªå¤§ãã•ãªå›³å½¢ã«å¤‰æ›´
     private int[,] SizeCheck(int[] shape)
     {
         float sqrt = Mathf.Sqrt(shape.Length);
         int edge = (int)sqrt;
         int[,] twoShape = new int[edge, edge];
 
-        //1ŸŒ³”z—ñ‚©‚ç2ŸŒ³”z—ñ‚Ö
+        //1æ¬¡å…ƒé…åˆ—ã‹ã‚‰2æ¬¡å…ƒé…åˆ—ã¸
         for (int i = 0; i < edge; i++)
         {
             for (int j = 0; j < edge; j++)
@@ -191,7 +191,7 @@ public class TileCheck : MonoBehaviour
             }
         }
 
-        //³•ûŒ`‚©‚ç“KØ‚È‘å‚«‚³‚É•ÏX
+        //æ­£æ–¹å½¢ã‹ã‚‰é©åˆ‡ãªå¤§ãã•ã«å¤‰æ›´
         int[,] num = ArrayTrans(twoShape);
 
 
@@ -221,11 +221,11 @@ public class TileCheck : MonoBehaviour
 
     private int[,] ArrayTrasnsTop(int[,] array)
     {
-        //x‚Ì’·‚³
+        //xã®é•·ã•
         int x = array.GetLength(0);
         int y = array.GetLength(1);
 
-        //ˆê”Ôã‚Ìx‚Ì”‚ğ‘ª‚é
+        //ä¸€ç•ªä¸Šã®xã®æ•°ã‚’æ¸¬ã‚‹
         int num = 0;
         for (int i = 0; i < x; i++)
         {
@@ -254,11 +254,11 @@ public class TileCheck : MonoBehaviour
 
     private int[,] ArrayTrasnsUnder(int[,] array)
     {
-        //x‚Ì’·‚³
+        //xã®é•·ã•
         int x = array.GetLength(0);
         int y = array.GetLength(1);
 
-        //ˆê”Ô‰º‚Ìx‚Ì”‚ğ‘ª‚é
+        //ä¸€ç•ªä¸‹ã®xã®æ•°ã‚’æ¸¬ã‚‹
         int num = 0;
         for (int i = 0; i < x; i++)
         {
@@ -290,7 +290,7 @@ public class TileCheck : MonoBehaviour
         int x = array.GetLength(0);
         int y = array.GetLength(1);
 
-        //ˆê”Ô¶‚Ìx‚Ì”‚ğ‘ª‚é
+        //ä¸€ç•ªå·¦ã®xã®æ•°ã‚’æ¸¬ã‚‹
         int num = 0;
         for (int i = 0; i < y; i++)
         {
@@ -321,7 +321,7 @@ public class TileCheck : MonoBehaviour
         int x = array.GetLength(0);
         int y = array.GetLength(1);
 
-        //ˆê”Ô¶‚Ìx‚Ì”‚ğ‘ª‚é
+        //ä¸€ç•ªå·¦ã®xã®æ•°ã‚’æ¸¬ã‚‹
         int num = 0;
         for (int i = 0; i < y; i++)
         {

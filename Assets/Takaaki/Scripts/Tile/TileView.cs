@@ -1,12 +1,12 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TileView : MonoBehaviour
 {
-    //•¨—•”•ª
-    //•ÏXÏ‚İ
+    //ç‰©ç†éƒ¨åˆ†
+    //å¤‰æ›´æ¸ˆã¿
     [SerializeField]
     private Image[] magicImages = new Image[12];
     [SerializeField]

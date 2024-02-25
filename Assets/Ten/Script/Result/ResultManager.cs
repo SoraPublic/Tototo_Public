@@ -1,110 +1,91 @@
-using System.Collections;
-using System.Collections.Generic;
+ï»¿using System.IO;
 using UnityEngine;
-using System.IO;
 
 public class ResultManager
 {
     public void CreateResultData(string datapath)
     {
-        ResultData data = new ResultData();//V‚µ‚¢ƒŠƒUƒ‹ƒgƒf[ƒ^‚ğ¶¬
+        ResultData data = new ResultData();//æ–°ã—ã„ãƒªã‚¶ãƒ«ãƒˆãƒ‡ãƒ¼ã‚¿ã‚’ç”Ÿæˆ
 
-        if (File.Exists(datapath))//‰ß‹‚ÉƒvƒŒƒC‚µ‚Ä‚¢‚½ƒXƒe[ƒW‚È‚çiƒŠƒUƒ‹ƒgƒf[ƒ^‚ª‚ ‚é‚È‚çj
+        if (File.Exists(datapath))//éå»ã«ãƒ—ãƒ¬ã‚¤ã—ã¦ã„ãŸã‚¹ãƒ†ãƒ¼ã‚¸ãªã‚‰ï¼ˆãƒªã‚¶ãƒ«ãƒˆãƒ‡ãƒ¼ã‚¿ãŒã‚ã‚‹ãªã‚‰ï¼‰
         {
-            data = LoadResultData(datapath);//‘O‰ñ‚Ìƒf[ƒ^‚ğæ“¾
-            data.star = 0;//Šl“¾‚µ‚Ä‚¢‚½¯‚ğƒŠƒZƒbƒg
-            //data.oldGotCard += data.nowGetCard;
-            data.nowGetCard = 0;//ƒJ[ƒhŠl“¾–‡”‚ğƒŠƒZƒbƒg
+            data = LoadResultData(datapath);//å‰å›ã®ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—
+            data.star = 0;//ç²å¾—ã—ã¦ã„ãŸæ˜Ÿã‚’ãƒªã‚»ãƒƒãƒˆ
+            data.nowGetCard = 0;//ã‚«ãƒ¼ãƒ‰ç²å¾—æšæ•°ã‚’ãƒªã‚»ãƒƒãƒˆ
         }
-        else if (!Directory.Exists(Application.dataPath + "/" + SavePathName.ResultDataPath))  // "/ResultData"))//ƒtƒHƒ‹ƒ_‚·‚ç–³‚©‚Á‚½‚çi‚Ù‚Ú‹@”\‚µ‚È‚¢‚¯‚ÇƒoƒO‘Îôj
+        else if (!Directory.Exists(Application.dataPath + "/" + SavePathName.ResultDataPath))//ãƒ•ã‚©ãƒ«ãƒ€ã™ã‚‰ç„¡ã‹ã£ãŸã‚‰ï¼ˆã»ã¼æ©Ÿèƒ½ã—ãªã„ã‘ã©ãƒã‚°å¯¾ç­–ï¼‰
         {
-            Directory.CreateDirectory(Application.dataPath + "/" + SavePathName.ResultDataPath); //"/ResultData");//ƒtƒHƒ‹ƒ_‚ğ¶¬
+            Directory.CreateDirectory(Application.dataPath + "/" + SavePathName.ResultDataPath);//ãƒ•ã‚©ãƒ«ãƒ€ã‚’ç”Ÿæˆ
         }
 
-        data.hit = 0;//”í’e”‚ğƒŠƒZƒbƒg
-        data.time = 0;//“¢”°ŠÔ‚ğƒŠƒZƒbƒg
+        data.hit = 0;//è¢«å¼¾æ•°ã‚’ãƒªã‚»ãƒƒãƒˆ
+        data.time = 0;//è¨ä¼æ™‚é–“ã‚’ãƒªã‚»ãƒƒãƒˆ
 
-        SaveResultData(data, Application.dataPath + "/" + SavePathName.CurrentStageFile);//"/ResultData/Current_Data.json");//‰ß‹‚Ìƒf[ƒ^‚Éã‘‚«‚µ‚È‚¢
+        SaveResultData(data, Application.dataPath + "/" + SavePathName.CurrentStageFile);//éå»ã®ãƒ‡ãƒ¼ã‚¿ã«ä¸Šæ›¸ãã—ãªã„
     }
 
     public void SaveResultData(ResultData data, string filePath)
     {
-        // ƒZ[ƒuƒf[ƒ^‚ğJSONŒ`®‚Ì•¶š—ñ‚É•ÏŠ·
+        // ã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿ã‚’JSONå½¢å¼ã®æ–‡å­—åˆ—ã«å¤‰æ›
         string json = JsonUtility.ToJson(data);
 
         byte[] arrEncrypted = ConversionManager.ConvertIntoCipher(json);
 
-        // w’è‚µ‚½ƒpƒX‚Éƒtƒ@ƒCƒ‹‚ğì¬
+        // æŒ‡å®šã—ãŸãƒ‘ã‚¹ã«ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œæˆ
         FileStream file = new FileStream(filePath, FileMode.Create, FileAccess.Write);
 
-        // ƒtƒ@ƒCƒ‹‚É•Û‘¶
+        // ãƒ•ã‚¡ã‚¤ãƒ«ã«ä¿å­˜
         file.Write(arrEncrypted, 0, arrEncrypted.Length);
 
-        // ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+        // ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
         if (file != null)
         {
             file.Close();
         }
-        Debug.Log("ƒZ[ƒuŠ®—¹");
-
-        /*
-        string jsonstr = JsonUtility.ToJson(data);
-        StreamWriter writer = new StreamWriter(datapath, false);
-        writer.WriteLine(jsonstr);
-        writer.Flush();
-        writer.Close();
-        */
+        //Debug.Log("ã‚»ãƒ¼ãƒ–å®Œäº†");
     }
 
     public ResultData LoadResultData(string filePath)
     {
         ResultData resultData;
-        //Šù‚Éƒf[ƒ^‚ª‘¶İ‚·‚éê‡
+        //æ—¢ã«ãƒ‡ãƒ¼ã‚¿ãŒå­˜åœ¨ã™ã‚‹å ´åˆ
         if (File.Exists(filePath))
         {
-            //ƒtƒ@ƒCƒ‹ƒ‚[ƒh‚ğƒI[ƒvƒ“‚É‚·‚é
+            //ãƒ•ã‚¡ã‚¤ãƒ«ãƒ¢ãƒ¼ãƒ‰ã‚’ã‚ªãƒ¼ãƒ—ãƒ³ã«ã™ã‚‹
             FileStream file = new FileStream(filePath, FileMode.Open, FileAccess.Read);
 
-            // ƒtƒ@ƒCƒ‹“Ç‚İ‚İ
+            // ãƒ•ã‚¡ã‚¤ãƒ«èª­ã¿è¾¼ã¿
             byte[] arrRead = File.ReadAllBytes(filePath);
 
-            //•¡‡‰»‚È‚Ç‚È‚Ç
+            //è¤‡åˆåŒ–ãªã©ãªã©
             string decryptStr = ConversionManager.ConvertIntoJson(arrRead);
 
             resultData = JsonUtility.FromJson<ResultData>(decryptStr);
 
-            // ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+            // ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
             if (file != null)
             {
                 file.Close();
             }
 
-            Debug.Log("Load : Šù‘¶ƒf[ƒ^‚ ‚è");
+            //Debug.Log("Load : æ—¢å­˜ãƒ‡ãƒ¼ã‚¿ã‚ã‚Š");
 
         }
         else
         {
             resultData = new ResultData();
-            Debug.Log("Load : Šù‘¶ƒf[ƒ^‚È‚µ");
+            //Debug.Log("Load : æ—¢å­˜ãƒ‡ãƒ¼ã‚¿ãªã—");
         }
 
         return resultData;
-        /*
-        StreamReader reader = new StreamReader(datapath); //ó‚¯æ‚Á‚½ƒpƒX‚Ìƒtƒ@ƒCƒ‹‚ğ“Ç‚İ‚Ş
-        string datastr = reader.ReadToEnd();//ƒtƒ@ƒCƒ‹‚Ì’†g‚ğ‚·‚×‚Ä“Ç‚İ‚Ş
-        reader.Close();
-
-
-        return JsonUtility.FromJson<ResultData>(datastr);//“Ç‚İ‚ñ‚¾jsonƒtƒ@ƒCƒ‹‚ğResultDataŒ^‚É•ÏŠ·‚µ‚Ä•Ô‚·
-    */
     }
 
     public void EvaluateResultData(ResultData result, ResultEntity entity)
     {
-        Debug.Log("¯" + result.star);
-        Debug.Log("now" + result.nowGetCard);
-        Debug.Log("old" + result.oldGotCard);
-        //Šî€‚ğ–‚½‚µ‚Ä‚¢‚ê‚Î¯Šl“¾
+        //Debug.Log("æ˜Ÿ" + result.star);
+        //Debug.Log("now" + result.nowGetCard);
+        //Debug.Log("old" + result.oldGotCard);
+        //åŸºæº–ã‚’æº€ãŸã—ã¦ã„ã‚Œã°æ˜Ÿç²å¾—
         if (result.clear >= entity.clear)
         {
             result.star++;
@@ -118,7 +99,7 @@ public class ResultManager
             result.star++;
         }
 
-        //Šl“¾‚·‚éƒJ[ƒh‚Ì–‡”‚ğ’²¸
+        //ç²å¾—ã™ã‚‹ã‚«ãƒ¼ãƒ‰ã®æšæ•°ã‚’èª¿æŸ»
         int willGetCard = result.star - result.oldGotCard;
 
         if ((willGetCard <= 0) || (result.oldGotCard >= 3))
@@ -129,21 +110,5 @@ public class ResultManager
         {
             result.nowGetCard = willGetCard;
         }
-
-        /*if ((result.oldGotCard == 1) && (result.star >= 3))
-        {
-            result.nowGetCard++;
-        }
-        if (result.oldGotCard == 0)
-        {
-            if (result.star >= 1)
-            {
-                result.nowGetCard++;
-            }
-            if (result.star >= 3)
-            {
-                result.nowGetCard++;
-            }
-        }*/
     }
 }

@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 
 public class ThirdButton : MonoBehaviour
@@ -33,41 +32,19 @@ public class ThirdButton : MonoBehaviour
     public void OnClick()
     {
         thisAnimator.SetTrigger("out");
-
-        /*if (willGetCardNum.Count > 0)
-        {
-            //StartCoroutine(CardChange());
-            Debug.Log("•\Ž¦‘O:" + willGetCardNum.Count + "–‡");
-            isGetCard = true;
-            GameObject card = cardGenerator.GenerateMagicCard(magicStorage.MagicList[willGetCardNum[0]]);
-            card.transform.SetParent(transform.parent.transform.Find("Card").gameObject.transform);
-            card.transform.localScale = new Vector3(3.5f, 3.5f, 3.5f);
-            card.transform.localPosition = new Vector3(0f, 30f, 0f);
-            willGetCardNum.RemoveAt(0);
-        }
-        thisAnimator.SetBool("isGetCard", isGetCard);
-
-        if (!isGetCard)
-        {
-            animator.SetTrigger("next");
-            //transform.parent.gameObject.GetComponent<Animator>().SetTrigger("push");
-            StageManager.instance.stageEffecter.cameraManager.SetCamera(false);
-        }
-
-        isGetCard = false;*/
     }
 
     public void CardChange()
     {
         if (willGetCardNum.Count > 0)
         {
-            Debug.Log("•\Ž¦Žc‚è:" + willGetCardNum.Count + "–‡");
+            //Debug.Log("è¡¨ç¤ºæ®‹ã‚Š:" + willGetCardNum.Count + "æžš");
             isGetCard = true;
             GameObject card = cardGenerator.GenerateMagicCard(magicStorage.MagicList[willGetCardNum[0]]);
             card.transform.SetParent(transform.parent.transform.Find("Card").gameObject.transform);
             card.transform.localScale = new Vector3(3.5f, 3.5f, 3.5f);
             card.transform.localPosition = new Vector3(0f, 30f, 0f);
-            Debug.Log("•\Ž¦’†:" + magicStorage.MagicList[willGetCardNum[0]] + "”Ô");
+            //Debug.Log("è¡¨ç¤ºä¸­:" + magicStorage.MagicList[willGetCardNum[0]] + "ç•ª");
             willGetCardNum.RemoveAt(0);
         }
 

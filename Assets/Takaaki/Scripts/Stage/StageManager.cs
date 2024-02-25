@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
@@ -57,11 +57,11 @@ public class StageManager : MonoBehaviour
 
     public enum State
     {
-        SelectCard,    //ƒJ[ƒh‘I‘ğ‰æ–Ê
-        Battle,//ƒoƒgƒ‹’†
-        Menu,//ƒƒjƒ…[
-        Result,//ƒŠƒUƒ‹ƒg
-        Effect,//‰‰o
+        SelectCard,    //ã‚«ãƒ¼ãƒ‰é¸æŠç”»é¢
+        Battle,//ãƒãƒˆãƒ«ä¸­
+        Menu,//ãƒ¡ãƒ‹ãƒ¥ãƒ¼
+        Result,//ãƒªã‚¶ãƒ«ãƒˆ
+        Effect,//æ¼”å‡º
     }
 
     public State state;
@@ -75,26 +75,26 @@ public class StageManager : MonoBehaviour
     {
         sceneLoader = new SceneLoader();
         dataManger = new DataManger();
-        //‰Šú‰»
+        //åˆæœŸåŒ–
         waveNum = 0;
         wave = stageEntity.waveEntities[waveNum];
 
         willGetCardNum = new List<int>();
 
-        //€”õ
+        //æº–å‚™
         Preparation();
-        resultManager.CreateResultData(Application.dataPath + "/" + SavePathName.StageFile(stageEntity.name));//"/" + SavePathName.ResultDataPath + "/" + stageEntity.name + "_Data.json");//ƒŠƒUƒ‹ƒg¶¬
+        resultManager.CreateResultData(Application.dataPath + "/" + SavePathName.StageFile(stageEntity.name));//"/" + SavePathName.ResultDataPath + "/" + stageEntity.name + "_Data.json");//ãƒªã‚¶ãƒ«ãƒˆç”Ÿæˆ
     }
 
     private void Update()
     {
-        //c‚èŠÔ‚ğ•\¦
+        //æ®‹ã‚Šæ™‚é–“ã‚’è¡¨ç¤º
         timeText.DisplayTime(stageEntity.resultEntity.rimitTime - clearTime);
 
-        //ŠÔ‚ğ‘ª‚é
+        //æ™‚é–“ã‚’æ¸¬ã‚‹
         if (state == State.Battle)
         {
-            //ƒ^ƒCƒ€ƒI[ƒo[‚È‚çƒQ[ƒ€ƒI[ƒo[ƒV[ƒ“‚Ö
+            //ã‚¿ã‚¤ãƒ ã‚ªãƒ¼ãƒãƒ¼ãªã‚‰ã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒãƒ¼ã‚·ãƒ¼ãƒ³ã¸
             if (clearTime >= stageEntity.resultEntity.rimitTime)
             {
                 sceneLoader.LoadGameOver();
@@ -121,44 +121,44 @@ public class StageManager : MonoBehaviour
         enemy.SetUp();
     }
 
-    //€”õ
+    //æº–å‚™
     private void Preparation()
     {
-        //ƒ^ƒCƒ‹‚Ì•\¦
+        //ã‚¿ã‚¤ãƒ«ã®è¡¨ç¤º
         //SetTiles();
         stageGenerator.GenerateStage(stageEntity.waveEntities);
         stageGenerator.SetTile(waveNum);
 
-        //ƒNƒ‰ƒX‚Ì”z•zH
+        //ã‚¯ãƒ©ã‚¹ã®é…å¸ƒï¼Ÿ
         SetUP();
 
-        //‰ŠúˆÊ’u‚Ö
+        //åˆæœŸä½ç½®ã¸
         playerMover.MovePlayer(stageEntity.waveEntities[0].playerX, stageEntity.waveEntities[0].playerY, 0f);
 
-        //ŠJn‚Ì‰‰o ƒJ[ƒh‘I‘ğ‰æ–Ê‚Ì‘JˆÚ‚à‚±‚±
+        //é–‹å§‹ã®æ¼”å‡º ã‚«ãƒ¼ãƒ‰é¸æŠç”»é¢ã®é·ç§»ã‚‚ã“ã“
         stageEffecter.StageIn();
 
-        //ƒŠƒUƒ‹ƒg‚Ì‰Šú‰»
+        //ãƒªã‚¶ãƒ«ãƒˆã®åˆæœŸåŒ–
         resultManager = new ResultManager();
     }
 
     public void SetBattle()
     {
-        //ƒoƒgƒ‹ŠJn  
-        //ƒ^ƒCƒ‹¶¬
+        //ãƒãƒˆãƒ«é–‹å§‹  
+        //ã‚¿ã‚¤ãƒ«ç”Ÿæˆ
         stageGenerator.SetTile(waveNum);
-        //ƒJ[ƒh‘I‘ğ‚Å‘I‘ğ‚µ‚½–‚–@‚ğƒZƒbƒg
+        //ã‚«ãƒ¼ãƒ‰é¸æŠã§é¸æŠã—ãŸé­”æ³•ã‚’ã‚»ãƒƒãƒˆ
         magicManager.SetEntities();
         tileCheck.SetMagic();
-        //ƒJ[ƒh‘I‘ğ‰æ–Ê‚ğ”ñ•\¦
+        //ã‚«ãƒ¼ãƒ‰é¸æŠç”»é¢ã‚’éè¡¨ç¤º
         sceneLoader.UnLoadCardSelect();
-        //‰‰o
+        //æ¼”å‡º
         stageEffecter.BattleStart();
     }
 
     private void SetResult()
     {
-        //Result‚Ìì¬
+        //Resultã®ä½œæˆ
         ResultData result = resultManager.LoadResultData(Application.dataPath + "/" + SavePathName.CurrentStageFile); //"/ResultData/Current_Data.json");
         ResultData oldResult = new ResultData();
         if (File.Exists(Application.dataPath + "/" + SavePathName.StageFile(stageEntity.name)))
@@ -182,38 +182,38 @@ public class StageManager : MonoBehaviour
             result.oldGotCard++;
         }
 
-        Debug.Log("old" + result.oldGotCard);
+        //Debug.Log("old" + result.oldGotCard);
         Array.Sort(gameData.cardLists);
         dataManger.SaveGameData(gameData);
         resultManager.SaveResultData(result, Application.dataPath + "/" + SavePathName.CurrentStageFile);
         if (result.star >= oldResult.star)
         {
             resultManager.SaveResultData(result, Application.dataPath + "/" + SavePathName.StageFile(stageEntity.name));//"/ResultData/" + stageEntity.name + "_Data.json");
-            //‰ß‹‚Ìƒf[ƒ^‚É¡‚Ìƒf[ƒ^‚ğã‘‚«
+            //éå»ã®ãƒ‡ãƒ¼ã‚¿ã«ä»Šã®ãƒ‡ãƒ¼ã‚¿ã‚’ä¸Šæ›¸ã
         }
 
-        //Result‚Ì•\¦
+        //Resultã®è¡¨ç¤º
         stageEffecter.OpenResult();
     }
 
 
-    public void AllEnemyKill()//‚·‚×‚Ä‚Ì“G‚ª“|‚³‚ê‚½‚Æ‚« 
+    public void AllEnemyKill()//ã™ã¹ã¦ã®æ•µãŒå€’ã•ã‚ŒãŸã¨ã 
     {
         waveNum++;
 
         if (waveNum < stageEntity.waveEntities.Length)
         {
-            //Ÿ‚ÌƒEƒF[ƒu‚Ö‚Ì‰‰o
+            //æ¬¡ã®ã‚¦ã‚§ãƒ¼ãƒ–ã¸ã®æ¼”å‡º
             stageEffecter.ChangeWave();
         }
         else
         {
-            //ƒQ[ƒ€ƒNƒŠƒA
+            //ã‚²ãƒ¼ãƒ ã‚¯ãƒªã‚¢
             SetResult();
         }
     }
 
-    public void ChangeWave()@//ƒEƒF[ƒu‚Ì•ÏX 
+    public void ChangeWave()ã€€//ã‚¦ã‚§ãƒ¼ãƒ–ã®å¤‰æ›´ 
     {
         //SetTiles();
         stageGenerator.SetTile(waveNum);
@@ -223,7 +223,7 @@ public class StageManager : MonoBehaviour
 
         SetUP();
         playerMover.SuspendMove();
-        playerMover.MovePlayer(stageEntity.waveEntities[waveNum].playerX, stageEntity.waveEntities[waveNum].playerY, 0f); //‰ŠúˆÊ’u‚Ö
+        playerMover.MovePlayer(stageEntity.waveEntities[waveNum].playerX, stageEntity.waveEntities[waveNum].playerY, 0f); //åˆæœŸä½ç½®ã¸
         magicManager.SetEntities();
 
         PlayerStatus.instance.ResetBuff();
@@ -246,7 +246,7 @@ public class StageManager : MonoBehaviour
 
     public void Check()
     {
-        //ƒ^ƒCƒ‹‚Ì”»’è‚ğs‚¤
+        //ã‚¿ã‚¤ãƒ«ã®åˆ¤å®šã‚’è¡Œã†
         tileManager.Check();
     }
 

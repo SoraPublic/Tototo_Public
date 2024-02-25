@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Enemy;
@@ -6,17 +6,17 @@ using Enemy;
 [CreateAssetMenu(fileName = "WaveEntity", menuName = "Create WaveEntity")]
 public class WaveEntity : ScriptableObject
 {
-    [Header("ƒ^ƒCƒ‹")]
+    [Header("ã‚¿ã‚¤ãƒ«")]
     public GameObject TilePrefab;
 
-    [Header("ƒ^ƒCƒ‹‚Ì‘å‚«‚³")]
+    [Header("ã‚¿ã‚¤ãƒ«ã®å¤§ãã•")]
     public int row;
     public int column;
 
-    [Header("ƒvƒŒƒCƒ„[‚Ì‰ŠúˆÊ’u")]
+    [Header("ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®åˆæœŸä½ç½®")]
     public int playerX;
     public int playerY;
 
-    [Header("“G‚Ìî•ñ")]
+    [Header("æ•µã®æƒ…å ±")]
     public Info_Enemy infoEnemy;
 }

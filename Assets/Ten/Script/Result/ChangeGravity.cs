@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class ChangeGravity : MonoBehaviour
 {
@@ -11,12 +9,12 @@ public class ChangeGravity : MonoBehaviour
     private void Start()
     {
         rBody = this.GetComponent<Rigidbody>();
-        rBody.useGravity = false; //Å‰‚ÉrigidBody‚Ìd—Í‚ğg‚í‚È‚­‚·‚é
+        rBody.useGravity = false; //æœ€åˆã«rigidBodyã®é‡åŠ›ã‚’ä½¿ã‚ãªãã™ã‚‹
     }
 
     private void FixedUpdate()
     {
-        SetLocalGravity(); //d—Í‚ğAddForce‚Å‚©‚¯‚éƒƒ\ƒbƒh‚ğŒÄ‚ÔBFixedUpdate‚ªD‚Ü‚µ‚¢B
+        SetLocalGravity(); //é‡åŠ›ã‚’AddForceã§ã‹ã‘ã‚‹ãƒ¡ã‚½ãƒƒãƒ‰ã‚’å‘¼ã¶ã€‚FixedUpdateãŒå¥½ã¾ã—ã„ã€‚
     }
 
     private void SetLocalGravity()

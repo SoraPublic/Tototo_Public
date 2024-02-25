@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using Enemy;
+Ôªøusing UnityEngine;
 
-//ìGÇÃëÃóÕä«óùÉNÉâÉX
+//Êïµ„ÅÆ‰ΩìÂäõÁÆ°ÁêÜ„ÇØ„É©„Çπ
 public class EnemyHPController : MonoBehaviour
 {
     private int HitPoint;
@@ -24,7 +20,7 @@ public class EnemyHPController : MonoBehaviour
         if (HitPoint > 0)
         {
             HitPoint -= value;
-            Debug.Log(value + "É_ÉÅÅ[ÉW");
+            //Debug.Log(value + "„ÉÄ„É°„Éº„Ç∏");
         }
 
         return HitPoint;
@@ -35,13 +31,13 @@ public class EnemyHPController : MonoBehaviour
         if (HitPoint < MaxHP)
         {
             HitPoint += value;
-            Debug.Log(value + "âÒïú");
+            //Debug.Log(value + "ÂõûÂæ©");
         }
 
         return HitPoint;
     }
 
-    public int GetHP()//åªç›ÇÃHPÇÃílÇéÊìæÇ∑ÇÈ
+    public int GetHP()//ÁèæÂú®„ÅÆHP„ÅÆÂÄ§„ÇíÂèñÂæó„Åô„Çã
     {
         return HitPoint;
     }

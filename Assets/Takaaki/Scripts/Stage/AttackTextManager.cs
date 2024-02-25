@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -38,6 +38,6 @@ public class AttackTextManager : MonoBehaviour
 
         TextMeshProUGUI text = gameObject.GetComponent<TextMeshProUGUI>();
 
-        text.text = "" + damage + " É_ÉÅÅ[ÉW";
+        text.text = "" + damage + " „ÉÄ„É°„Éº„Ç∏";
     }
 }

@@ -1,20 +1,20 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TileManager : MonoBehaviour
 {
-    //–‚–@w‰]X
+    //é­”æ³•é™£äº‘ã€…
     [SerializeField] private TileCheck tileCheck;
      
-    //ƒ^ƒCƒ‹ˆêŒÂ‚¸‚Â‚Ì”z—ñ
+    //ã‚¿ã‚¤ãƒ«ä¸€å€‹ãšã¤ã®é…åˆ—
     [System.NonSerialized]
     public TileState[] tileStates = new TileState[25];
 
     [System.NonSerialized]
-    public int row; //s
+    public int row; //è¡Œ
     [System.NonSerialized]
-    public int column;@// —ñ
+    public int column;ã€€// åˆ—
 
     [SerializeField] private AudioSource tileSound;
 
@@ -32,7 +32,7 @@ public class TileManager : MonoBehaviour
         }
     }
 
-    //ƒ^ƒCƒ‹‘S•”‚ğƒŠƒZƒbƒg
+    //ã‚¿ã‚¤ãƒ«å…¨éƒ¨ã‚’ãƒªã‚»ãƒƒãƒˆ
     public void ResetState()
     {
         for (int i = 0; i < 25; i++)
@@ -41,22 +41,22 @@ public class TileManager : MonoBehaviour
         }
     }
 
-    //–‚–@w‚Ìƒ`ƒFƒbƒN
+    //é­”æ³•é™£ã®ãƒã‚§ãƒƒã‚¯
     public void Check()
     {
         tileCheck.Check(tileStates);
     }
 
-    //ƒ^ƒCƒ‹‚ª‚Ù‚µ‚¢‚Æ‚«‚Ég‚¤
+    //ã‚¿ã‚¤ãƒ«ãŒã»ã—ã„ã¨ãã«ä½¿ã†
     public TileState GetTile(int x, int y)
     {
         if (x < 0 || row <= x)
         {
-            Debug.Log("‚»‚Ìs‚Í‘¶İ‚µ‚Ü‚¹‚ñ");
+            Debug.Log("ãã®è¡Œã¯å­˜åœ¨ã—ã¾ã›ã‚“");
         }
         else if (y < 0 || column <= y) 
         {
-            Debug.Log("‚»‚Ì—ñ‚Í‘¶İ‚µ‚Ü‚¹‚ñ");
+            Debug.Log("ãã®åˆ—ã¯å­˜åœ¨ã—ã¾ã›ã‚“");
         }
         else
         {

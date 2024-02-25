@@ -1,31 +1,31 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TileState : MonoBehaviour
 {
-    public enum TileSituation //ƒ^ƒCƒ‹‚Ìó‹µ
+    public enum TileSituation //ã‚¿ã‚¤ãƒ«ã®çŠ¶æ³
     {
-        Normal, //’Êí‚Ìƒ^ƒCƒ‹‚ª‚ ‚éó‘Ô
-        Block,@//áŠQ•¨‚ª‚ ‚è’Ê‚ê‚È‚¢ó‘Ô
-        Empty, //ƒ^ƒCƒ‹‚ª‚»‚à‚»‚à‘¶İ‚µ‚È‚¢ó‘Ô
+        Normal, //é€šå¸¸ã®ã‚¿ã‚¤ãƒ«ãŒã‚ã‚‹çŠ¶æ…‹
+        Block,ã€€//éšœå®³ç‰©ãŒã‚ã‚Šé€šã‚Œãªã„çŠ¶æ…‹
+        Empty, //ã‚¿ã‚¤ãƒ«ãŒãã‚‚ãã‚‚å­˜åœ¨ã—ãªã„çŠ¶æ…‹
     }
 
-    //ƒ^ƒCƒ‹‚ÌŒ©‚½–Ú‚ÌŠÇ—
+    //ã‚¿ã‚¤ãƒ«ã®è¦‹ãŸç›®ã®ç®¡ç†
     private TileView tileView;
     
-    //”G‚ê‚½Š£‚¢‚½‚Ìî•ñ
+    //æ¿¡ã‚ŒãŸä¹¾ã„ãŸã®æƒ…å ±
     [SerializeField]
     private int state;
 
-    //”G‚ê‚½Š£‚¢‚½‚Ì’†ŠÔ’l
+    //æ¿¡ã‚ŒãŸä¹¾ã„ãŸã®ä¸­é–“å€¤
     private float middle;
 
-    //ƒvƒŒƒCƒ„[‚ªŠ£‚©‚µ‚Ä‚¢‚é‚È‚çtrue
+    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒä¹¾ã‹ã—ã¦ã„ã‚‹ãªã‚‰true
     public bool isPressing;
 
-    public TileSituation situation;@//ƒ^ƒCƒ‹‚Ìó‹µ
+    public TileSituation situation;ã€€//ã‚¿ã‚¤ãƒ«ã®çŠ¶æ³
 
     public AudioSource tileSound;
 
@@ -36,8 +36,8 @@ public class TileState : MonoBehaviour
 
     private void Start()
     {
-        //‰Šú‰»
-        //”G‚ê‚½ó‘Ô‚É‚·‚é
+        //åˆæœŸåŒ–
+        //æ¿¡ã‚ŒãŸçŠ¶æ…‹ã«ã™ã‚‹
         middle = 0f;
         SetState(0);
 
@@ -50,15 +50,15 @@ public class TileState : MonoBehaviour
     {
         if (StageManager.instance.state == StageManager.State.Battle)
         {
-            //ƒvƒŒƒCƒ„[‚ªŠ£‚©‚µ‚Ä‚¢‚é‚Æ‚«
+            //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒä¹¾ã‹ã—ã¦ã„ã‚‹ã¨ã
             if (isPressing)
             {
-                //Š£‚©‚·
+                //ä¹¾ã‹ã™
                 IncreaseBorder();
             }
             else
             {
-                //”G‚ê‚é
+                //æ¿¡ã‚Œã‚‹
                 DecreaseBorder();
             }
         }
@@ -94,7 +94,7 @@ public class TileState : MonoBehaviour
         tileView.DeleteDirection();
     }
 
-    //Š£‚©‚·
+    //ä¹¾ã‹ã™
     private void IncreaseBorder()
     {
         middle += Time.deltaTime * PlayerStatus.instance.GetWriteSpeed();
@@ -111,7 +111,7 @@ public class TileState : MonoBehaviour
         tileView.SetMagicUp(middle);
     }
 
-    //”G‚ê‚½
+    //æ¿¡ã‚ŒãŸ
     private void DecreaseBorder()
     {
         middle -= Time.deltaTime * PlayerStatus.instance.GetEraseSpeed();
@@ -128,8 +128,8 @@ public class TileState : MonoBehaviour
         tileView.SetMagicDown(middle);
     }
 
-    //”G‚ê‚½Š£‚¢‚½ó‘Ô‚Ì•ÏX‚Ì‚Æ‚«‚Ég‚¤
-    //Œ©‚½–Ú‚Ü‚Å•Ï‚¦‚Ä‚­‚ê‚é‚Ì‚Åâ‘Î‚±‚±‚©‚ç•ÏX
+    //æ¿¡ã‚ŒãŸä¹¾ã„ãŸçŠ¶æ…‹ã®å¤‰æ›´ã®ã¨ãã«ä½¿ã†
+    //è¦‹ãŸç›®ã¾ã§å¤‰ãˆã¦ãã‚Œã‚‹ã®ã§çµ¶å¯¾ã“ã“ã‹ã‚‰å¤‰æ›´
     private void SetState(int setValue)
     {
         if (state != setValue)
@@ -138,7 +138,7 @@ public class TileState : MonoBehaviour
 
             StageManager.instance.tileManager.Check();
 
-            //–‚–@w‚ğ•`‚¢‚½‚Æ‚«
+            //é­”æ³•é™£ã‚’æã„ãŸã¨ã
             if(setValue == 1)
             {
                 tileSound.Play();
@@ -153,7 +153,7 @@ public class TileState : MonoBehaviour
         }
     }
 
-    //ó‘Ô‚ğ”½‘Î‚É‚·‚éAg‚Á‚Ä‚È‚¢‚©‚à
+    //çŠ¶æ…‹ã‚’åå¯¾ã«ã™ã‚‹ã€ä½¿ã£ã¦ãªã„ã‹ã‚‚
     private void ChangeState()
     {
         if (state == 0)
@@ -171,8 +171,8 @@ public class TileState : MonoBehaviour
         return state;
     }
 
-    //’l‚ğƒŠƒZƒbƒg‚·‚é
-    //“G‚ÌUŒ‚‚Å”G‚ç‚·ê‡‚Í‚±‚±‚ğg‚¤
+    //å€¤ã‚’ãƒªã‚»ãƒƒãƒˆã™ã‚‹
+    //æ•µã®æ”»æ’ƒã§æ¿¡ã‚‰ã™å ´åˆã¯ã“ã“ã‚’ä½¿ã†
     public void ResetState()
     {
         SetState(0);

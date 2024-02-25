@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,12 +13,12 @@ public class MagicCardGenerator : MonoBehaviour
 
     public GameObject GenerateMagicCard(MagicEntity magic)
     {
-        //İ’èÏ‚İ‚ÌƒJ[ƒh‚ğ¶¬
+        //è¨­å®šæ¸ˆã¿ã®ã‚«ãƒ¼ãƒ‰ã‚’ç”Ÿæˆ
         GameObject card = GenerateEmptyCard();
 
         card.SetActive(true);
 
-        //ƒJ[ƒh‚ÌŒ©‚½–Ú‚ğ•ÏX
+        //ã‚«ãƒ¼ãƒ‰ã®è¦‹ãŸç›®ã‚’å¤‰æ›´
         CardView(card, magic);
 
         return card;
@@ -26,7 +26,7 @@ public class MagicCardGenerator : MonoBehaviour
 
     public GameObject GenerateEmptyCard()
     {
-        //–¢İ’è‚ÌƒJ[ƒh‚ğ¶¬
+        //æœªè¨­å®šã®ã‚«ãƒ¼ãƒ‰ã‚’ç”Ÿæˆ
         GameObject card = Instantiate(cardPrefab);
 
         card.SetActive(false);
@@ -36,7 +36,7 @@ public class MagicCardGenerator : MonoBehaviour
 
     public void CardView(GameObject gameObject, MagicEntity magic)
     {
-        //Œ©‚½–Ú‚ğİ’è
+        //è¦‹ãŸç›®ã‚’è¨­å®š
         CardViewer cardViewer = gameObject.GetComponent<CardViewer>();
 
         if ((int)magic.skill != PlayerStatus.no_skill)
@@ -48,7 +48,7 @@ public class MagicCardGenerator : MonoBehaviour
         else
         {
             cardViewer.SetImage(cardSprites[magic.level - 1], magic.icon, null);
-            cardViewer.SetText((magic.level * PlayerStatus.attack).ToString(), "‚È‚µ");
+            cardViewer.SetText((magic.level * PlayerStatus.attack).ToString(), "ãªã—");
         }
     }
 }

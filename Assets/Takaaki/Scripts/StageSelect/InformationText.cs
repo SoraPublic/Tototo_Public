@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -19,9 +19,9 @@ public class InformationText : MonoBehaviour
     {
         stageText.text = stageName;
 
-        text.text = "" + resultEntity.clear.ToString("d2") + "‰ñˆÈãƒNƒŠƒA\n"
-            + "”í’e‰ñ”" + resultEntity.hit.ToString("d2") + "‰ñˆÈ‰º\n"
-            + "“¢”°ŽžŠÔ" + (resultEntity.clearTime / 60).ToString("d2") + ":" + (resultEntity.clearTime % 60).ToString("d2") + "ˆÈ“à";
+        text.text = "" + resultEntity.clear.ToString("d2") + "å›žä»¥ä¸Šã‚¯ãƒªã‚¢\n"
+            + "è¢«å¼¾å›žæ•°" + resultEntity.hit.ToString("d2") + "å›žä»¥ä¸‹\n"
+            + "è¨Žä¼æ™‚é–“" + (resultEntity.clearTime / 60).ToString("d2") + ":" + (resultEntity.clearTime % 60).ToString("d2") + "ä»¥å†…";
 
         if (resultData.clear >= resultEntity.clear)
         {

@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public enum PlayerState
+ï»¿public enum PlayerState
 {
-    Move,//“®‚¯‚é
-    Stop//“®‚¯‚È‚¢
+    Move,//å‹•ã‘ã‚‹
+    Stop//å‹•ã‘ãªã„
 }

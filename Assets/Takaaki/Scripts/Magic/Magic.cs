@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +12,7 @@ public class Magic : MonoBehaviour
     public Skill skill;
     public Sprite icon;
 
-    //Entity‚Ìî•ñ‚ğˆÚ‚·
+    //Entityã®æƒ…å ±ã‚’ç§»ã™
     public void SetEntity(MagicEntity entity, Sprite[] cards, Sprite[] skills)
     {
         array = entity.array;

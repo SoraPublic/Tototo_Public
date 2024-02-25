@@ -1,41 +1,41 @@
-using System.Text;
+ï»¿using System.Text;
 using System.Security.Cryptography;
 
 public static class ConversionManager 
 {
 
-    //”CˆÓ‚Ì”¼Šp‰p”16•¶š
+    //ä»»æ„ã®åŠè§’è‹±æ•°16æ–‡å­—
     private static string aesIv = "1234567890123456";
     private static string aesKey = "1234567890123456";
 
 
     /// <summary>
-    /// ˆÃ†•¶‚©‚çjson‚Ö•¡‡‰»
+    /// æš—å·æ–‡ã‹ã‚‰jsonã¸è¤‡åˆåŒ–
     /// </summary>
-    /// <param name="bytes">ˆÃ†•¶</param>
+    /// <param name="bytes">æš—å·æ–‡</param>
     /// <returns></returns>
     public static string ConvertIntoJson(byte[] bytes)
     {
-        // •œ†‰»
+        // å¾©å·åŒ–
         byte[] arrDecrypt = AesDecrypt(bytes);
 
-        // byte”z—ñ‚ğ•¶š—ñ‚É•ÏŠ·
+        // byteé…åˆ—ã‚’æ–‡å­—åˆ—ã«å¤‰æ›
         string json = Encoding.UTF8.GetString(arrDecrypt);
 
         return json;
     }
 
     /// <summary>
-    /// json‚©‚çˆÃ†•¶‚ÖˆÃ†‰»
+    /// jsonã‹ã‚‰æš—å·æ–‡ã¸æš—å·åŒ–
     /// </summary>
     /// <param name="json">json</param>
     /// <returns></returns>
     public static byte[] ConvertIntoCipher(string json)
     {
-        // •¶š—ñ‚ğbyte”z—ñ‚É•ÏŠ·
+        // æ–‡å­—åˆ—ã‚’byteé…åˆ—ã«å¤‰æ›
         byte[] bytes = Encoding.UTF8.GetBytes(json);
 
-        // AESˆÃ†‰»
+        // AESæš—å·åŒ–
         byte[] arrEncrypted = AesEncrypt(bytes);
 
         return arrEncrypted;
@@ -47,7 +47,7 @@ public static class ConversionManager
 
 
 
-    /// AesManagedƒ}ƒl[ƒWƒƒ[‚ğæ“¾
+    /// AesManagedãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼ã‚’å–å¾—
 
     private static AesManaged GetAesManager()
     {
@@ -63,23 +63,23 @@ public static class ConversionManager
         return aes;
     }
 
-    /// AESˆÃ†‰»
+    /// AESæš—å·åŒ–
     private static byte[] AesEncrypt(byte[] byteText)
     {
-        // AESƒ}ƒl[ƒWƒƒ[‚Ìæ“¾
+        // AESãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼ã®å–å¾—
         AesManaged aes = GetAesManager();
-        // ˆÃ†‰»
+        // æš—å·åŒ–
         byte[] encryptText = aes.CreateEncryptor().TransformFinalBlock(byteText, 0, byteText.Length);
 
         return encryptText;
     }
 
-    /// AES•œ†‰»
+    /// AESå¾©å·åŒ–
     private static byte[] AesDecrypt(byte[] byteText)
     {
-        // AESƒ}ƒl[ƒWƒƒ[æ“¾
+        // AESãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼å–å¾—
         var aes = GetAesManager();
-        // •œ†‰»
+        // å¾©å·åŒ–
         byte[] decryptText = aes.CreateDecryptor().TransformFinalBlock(byteText, 0, byteText.Length);//byteText.Length);
 
         return decryptText;

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,14 +13,14 @@ public class StageGenerator : MonoBehaviour
     {
         waves = waveEntities;
 
-        //  ƒ^ƒCƒ‹‚Ì¶¬
+        //  ã‚¿ã‚¤ãƒ«ã®ç”Ÿæˆ
         tiles = new GameObject[waveEntities.Length];
 
         for(int i = 0; i < waveEntities.Length; i++)
         {
             tiles[i] = Instantiate(waveEntities[i].TilePrefab);
 
-            // ƒ^ƒCƒ‹‚Ì‰Šú‰»
+            // ã‚¿ã‚¤ãƒ«ã®åˆæœŸåŒ–
             tiles[i].transform.SetParent(tilesParent.transform);
             tiles[i].transform.localScale = new Vector3(1f, 1f, 1f);
             tiles[i].transform.localPosition = new Vector3(0f, 0f, 0f);
@@ -28,7 +28,7 @@ public class StageGenerator : MonoBehaviour
             tiles[i].SetActive(false);
         }
 
-        //”wŒi‚Ì•\¦
+        //èƒŒæ™¯ã®è¡¨ç¤º
         SetBackGround();
     }
 
@@ -36,11 +36,11 @@ public class StageGenerator : MonoBehaviour
     {
         TileDisplay(waveNum);
 
-        // ƒNƒ‰ƒX‚Ìİ’è
+        // ã‚¯ãƒ©ã‚¹ã®è¨­å®š
         StageManager.instance.tileManager = tiles[waveNum].GetComponent<TileManager>();
         StageManager.instance.tileCheck = tiles[waveNum].GetComponent<TileCheck>();
 
-        //ƒ^ƒCƒ‹‚Ìİ’è
+        //ã‚¿ã‚¤ãƒ«ã®è¨­å®š
         StageManager.instance.row = waves[waveNum].row;
         StageManager.instance.column = waves[waveNum].column;
         StageManager.instance.playerManager.nowX = waves[waveNum].playerX;
@@ -54,7 +54,7 @@ public class StageGenerator : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        //ƒ^ƒCƒ‹‚Ì•\¦
+        //ã‚¿ã‚¤ãƒ«ã®è¡¨ç¤º
         tiles[waveNum].SetActive(true);
     }
 

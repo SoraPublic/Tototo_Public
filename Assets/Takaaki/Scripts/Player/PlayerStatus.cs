@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,30 +6,30 @@ public class PlayerStatus : MonoBehaviour
 {
     [SerializeField] private SkillEffectTimeManager skillEffectTimeManager;
 
-    /** ‰Šú’l@**/
-    public const float moveTime = 1f/2f; //ˆÚ“®‘¬“x
-    public const float writeSpeed = 1f/2f;@//–‚–@w‚ğ•`‚­‘¬“x
-    public const float eraseSpeed = 1f/12f;@//–‚–@w‚ÌÁ‚¦‚é‘¬“x
-    public const float coolTime = 20f; //–‚–@w‚ÌƒN[ƒ‹ƒ^ƒCƒ€
-    public const float buffDuration = 10f; //ƒoƒt‚Ì‘±ŠÔs
+    /** åˆæœŸå€¤ã€€**/
+    public const float moveTime = 1f/2f; //ç§»å‹•é€Ÿåº¦
+    public const float writeSpeed = 1f/2f;ã€€//é­”æ³•é™£ã‚’æãé€Ÿåº¦
+    public const float eraseSpeed = 1f/12f;ã€€//é­”æ³•é™£ã®æ¶ˆãˆã‚‹é€Ÿåº¦
+    public const float coolTime = 20f; //é­”æ³•é™£ã®ã‚¯ãƒ¼ãƒ«ã‚¿ã‚¤ãƒ 
+    public const float buffDuration = 10f; //ãƒãƒ•ã®æŒç¶šæ™‚é–“s
     public const float attack = 5f;
 
     public const float stopTime = 2.5f;
 
 
-    /** ƒoƒt‚Ì’l **/
-    private const float attackBuff_Fixed = 3; //UŒ‚—ÍŒÅ’è’lã¸
-    private const float attackBuff_Multiple = 1.5f;@//UŒ‚—Í”{—¦ã¸
+    /** ãƒãƒ•ã®å€¤ **/
+    private const float attackBuff_Fixed = 3; //æ”»æ’ƒåŠ›å›ºå®šå€¤ä¸Šæ˜‡
+    private const float attackBuff_Multiple = 1.5f;ã€€//æ”»æ’ƒåŠ›å€ç‡ä¸Šæ˜‡
 
-    private const float writeSpeedBuff = 2f; //–‚–@w‚ğ•`‚­‘¬“xƒAƒbƒv ”{—¦
-    private const float coolTimeBuff = 1.5f; //–‚–@w‚ÌƒN[ƒ‹ƒ^ƒCƒ€Œ¸­‘¬“xƒAƒbƒv@”{—¦
-    private const float moveSpeedBuff = 1.5f;@//ˆÚ“®‘¬“xƒAƒbƒv@”{—¦
+    private const float writeSpeedBuff = 2f; //é­”æ³•é™£ã‚’æãé€Ÿåº¦ã‚¢ãƒƒãƒ— å€ç‡
+    private const float coolTimeBuff = 1.5f; //é­”æ³•é™£ã®ã‚¯ãƒ¼ãƒ«ã‚¿ã‚¤ãƒ æ¸›å°‘é€Ÿåº¦ã‚¢ãƒƒãƒ—ã€€å€ç‡
+    private const float moveSpeedBuff = 1.5f;ã€€//ç§»å‹•é€Ÿåº¦ã‚¢ãƒƒãƒ—ã€€å€ç‡
 
-    private const float eraseSpeedDebuff = 0.5f;@//–‚–@w‚ªÁ‚¦‚é‘¬“xƒ_ƒEƒ“@”{—¦
-    private const float enemyAttackSpeedDebuff = 0.5f; //“G‚ÌUŒ‚‘¬“xƒ_ƒEƒ“@”{—¦
+    private const float eraseSpeedDebuff = 0.5f;ã€€//é­”æ³•é™£ãŒæ¶ˆãˆã‚‹é€Ÿåº¦ãƒ€ã‚¦ãƒ³ã€€å€ç‡
+    private const float enemyAttackSpeedDebuff = 0.5f; //æ•µã®æ”»æ’ƒé€Ÿåº¦ãƒ€ã‚¦ãƒ³ã€€å€ç‡
 
 
-    /** ƒoƒt‚ÌŠÔ **/
+    /** ãƒãƒ•ã®æ™‚é–“ **/
     private  const int attackBuff_Fixed_Time = 0;
     private  const int attackBuff_Multiple_Time = 1;
 
@@ -61,7 +61,7 @@ public class PlayerStatus : MonoBehaviour
         skillEffectTimeManager.SkillEffectTime(buffs);
     }
 
-    //ƒoƒt‚ğ‚©‚¯‚é
+    //ãƒãƒ•ã‚’ã‹ã‘ã‚‹
     public void ApplyBuff(Skill buff)
     {
         if (buff == Skill.ATTACK_FIXED) 
@@ -174,9 +174,9 @@ public class PlayerStatus : MonoBehaviour
         return speed;
     }
 
-    /** d‚ËŠ|‚¯‰Â”\@**
+    /** é‡ã­æ›ã‘å¯èƒ½ã€€**
 
-    //** ƒoƒt **
+    //** ãƒãƒ• **
     public List<float> attackBuffs_Fixed = new List<float>();
     public List<float> attackBuffs_Multiple = new List<float>();
 
@@ -187,7 +187,7 @@ public class PlayerStatus : MonoBehaviour
     public List<float> eraseSpeedDebuffs = new List<float>();
     public List<float> enemyAttackSpeedDebuffs = new List<float>();
 
-    //ƒoƒt‚Ìlist
+    //ãƒãƒ•ã®list
     public List<List<float>> lists = new List<List<float>>();
 
     private void Start()
@@ -207,13 +207,13 @@ public class PlayerStatus : MonoBehaviour
     {
         foreach (List<float> buff in lists)
         {
-            //ƒoƒt‚ÌŠÔŒ¸­
+            //ãƒãƒ•ã®æ™‚é–“æ¸›å°‘
             for (int i = 0; i < buff.Count; i++)
             {
                 buff[i] -= Time.deltaTime;
             }
 
-            //ƒoƒt‚Ìíœ@Œã‚ë‚©‚çíœ‚µ‚Ä‚¢‚­
+            //ãƒãƒ•ã®å‰Šé™¤ã€€å¾Œã‚ã‹ã‚‰å‰Šé™¤ã—ã¦ã„ã
             for (int i = buff.Count-1; i >= 0; i--)
             {
                 if(buff[i] < 0)

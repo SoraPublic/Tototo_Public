@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +15,7 @@ public class MagicManager : MonoBehaviour
         SetEntities();
     }
 
-    //Magic‚Ì‰Šú‰»
+    //Magicã®åˆæœŸåŒ–
     public void SetEntities()
     {
         int i = 0;

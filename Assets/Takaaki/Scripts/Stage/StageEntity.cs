@@ -1,31 +1,31 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "StageEntity", menuName = "Create StageEntity")]
 public class StageEntity : ScriptableObject
 {
-    [Header("ƒXƒe[ƒW‚Ìƒiƒ“ƒo[")]
+    [Header("ã‚¹ãƒ†ãƒ¼ã‚¸ã®ãƒŠãƒ³ãƒãƒ¼")]
     public int stgaeNum;
 
-    [Header("ƒXƒe[ƒW‚Ì”wŒi")]
+    [Header("ã‚¹ãƒ†ãƒ¼ã‚¸ã®èƒŒæ™¯")]
     public GameObject stageBackGround;
 
-    [Header("WaveŠÇ—")]
+    [Header("Waveç®¡ç†")]
     public WaveEntity[] waveEntities;
 
-    [Header("Ÿ‚ÌƒXƒe[ƒW")]
+    [Header("æ¬¡ã®ã‚¹ãƒ†ãƒ¼ã‚¸")]
     public StageEntity stageEntity;
 
-    [Header("•]‰¿Šî€")]
+    [Header("è©•ä¾¡åŸºæº–")]
     public ResultEntity resultEntity;
 
-    [Header("ƒJ[ƒh‘I‘ğ‰æ–Ê‚Ì”wŒi")]
+    [Header("ã‚«ãƒ¼ãƒ‰é¸æŠç”»é¢ã®èƒŒæ™¯")]
     public Sprite cardSelectBack;
 
-    [Header("‚±‚ÌƒXƒe[ƒW‚ÅŠl“¾‚Å‚«‚éƒJ[ƒh")]
+    [Header("ã“ã®ã‚¹ãƒ†ãƒ¼ã‚¸ã§ç²å¾—ã§ãã‚‹ã‚«ãƒ¼ãƒ‰")]
     public MagicEntity[] magics;
 
-    [Header("‚±‚ÌƒXƒe[ƒW‚Ìƒ^[ƒQƒbƒeƒBƒ“ƒO‚ÌF")]
+    [Header("ã“ã®ã‚¹ãƒ†ãƒ¼ã‚¸ã®ã‚¿ãƒ¼ã‚²ãƒƒãƒ†ã‚£ãƒ³ã‚°ã®è‰²")]
     public Color TargetColor;
 }

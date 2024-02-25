@@ -1,19 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+ï»¿using UnityEngine;
 
 [CreateAssetMenu(menuName ="CreateResultEntity")]
 public class ResultEntity : ScriptableObject
 {
-    [Header("ƒNƒŠƒA‰ñ”")]
-    public int clear@= 0;
+    [Header("ã‚¯ãƒªã‚¢å›æ•°")]
+    public int clearã€€= 0;
 
-    [Header("”í’e‰ñ”")]
+    [Header("è¢«å¼¾å›æ•°")]
     public int hit;
 
-    [Header("“¢”°ŠÔi•bj")]
+    [Header("è¨ä¼æ™‚é–“ï¼ˆç§’ï¼‰")]
     public int clearTime;
 
-    [Header("§ŒÀŠÔi•bj")]
+    [Header("åˆ¶é™æ™‚é–“ï¼ˆç§’ï¼‰")]
     public int rimitTime;
 }

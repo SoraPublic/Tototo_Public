@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
@@ -39,12 +39,12 @@ public class StageEffecter : MonoBehaviour
 
     private IEnumerator StageInCor() 
     {
-        //ƒXƒe[ƒWŠJn‚©‚çƒJ[ƒh‘I‘ğ‚ÌŠÔ
+        //ã‚¹ãƒ†ãƒ¼ã‚¸é–‹å§‹ã‹ã‚‰ã‚«ãƒ¼ãƒ‰é¸æŠã®é–“
 
         StageManager.instance.state = StageManager.State.Effect;
-        //‰‰o
+        //æ¼”å‡º
 
-        //ƒJƒƒ‰‚ğãŒü‚«‚É
+        //ã‚«ãƒ¡ãƒ©ã‚’ä¸Šå‘ãã«
         cameraManager.SetCamera(false);
 
         yield return new WaitForSeconds(0f);
@@ -61,17 +61,17 @@ public class StageEffecter : MonoBehaviour
 
     private IEnumerator BattleStartCor()
     {
-        //ƒJ[ƒh‘I‘ğ‚©‚çƒoƒgƒ‹ŠJn‚Ü‚Å‚ÌŠÔ
+        //ã‚«ãƒ¼ãƒ‰é¸æŠã‹ã‚‰ãƒãƒˆãƒ«é–‹å§‹ã¾ã§ã®é–“
 
         StageManager.instance.state = StageManager.State.Effect;
-        //‰‰o
+        //æ¼”å‡º
 
-        //ƒXƒe[ƒW”‚Ì•\¦
+        //ã‚¹ãƒ†ãƒ¼ã‚¸æ•°ã®è¡¨ç¤º
         telop.DisplayTelop("Stage "+ StageManager.stageEntity.stgaeNum, EffectTime);
 
         yield return new WaitForSeconds(EffectTime + 1f/10f);
 
-        //ƒEƒF[ƒu”‚Ì•\¦
+        //ã‚¦ã‚§ãƒ¼ãƒ–æ•°ã®è¡¨ç¤º
         telop.DisplayTelop("Wave 1/3", EffectTime);
 
         yield return new WaitForSeconds(EffectTime);
@@ -90,19 +90,19 @@ public class StageEffecter : MonoBehaviour
 
     private IEnumerator ChangeWaveCor() 
     {
-        //ƒoƒgƒ‹‚©‚çƒoƒgƒ‹‚ÌŠÔ@ƒEƒF[ƒu‚Ì•ÏX
+        //ãƒãƒˆãƒ«ã‹ã‚‰ãƒãƒˆãƒ«ã®é–“ã€€ã‚¦ã‚§ãƒ¼ãƒ–ã®å¤‰æ›´
 
         StageManager.instance.state = StageManager.State.Effect;
-        //‰‰o
+        //æ¼”å‡º
         cameraManager.SetCamera(false);
 
         yield return new WaitForSeconds(MoveCameraTime);
 
-        //ƒJƒƒ‰‚ªã‚ğŒü‚¢‚½‚Ì‚ÅƒEƒF[ƒu‚Ì•ÏX‚ğs‚¤
+        //ã‚«ãƒ¡ãƒ©ãŒä¸Šã‚’å‘ã„ãŸã®ã§ã‚¦ã‚§ãƒ¼ãƒ–ã®å¤‰æ›´ã‚’è¡Œã†
         StageManager.instance.ChangeWave();
 
 
-        //ƒEƒF[ƒu”‚Ì•\¦
+        //ã‚¦ã‚§ãƒ¼ãƒ–æ•°ã®è¡¨ç¤º
         telop.DisplayTelop("Wave "+ (StageManager.instance.waveNum+1) +"/3", EffectTime);
 
         yield return new WaitForSeconds(EffectTime);
@@ -121,9 +121,9 @@ public class StageEffecter : MonoBehaviour
 
     private IEnumerator OpenResultCor()
     {
-        //ƒŠƒUƒ‹ƒg‚Ì•\¦
+        //ãƒªã‚¶ãƒ«ãƒˆã®è¡¨ç¤º
         StageManager.instance.state = StageManager.State.Effect;
-        //‰‰o
+        //æ¼”å‡º
 
         rainMusic.Stop();
         rain.SetActive(false);

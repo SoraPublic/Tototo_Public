@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -56,7 +56,7 @@ public class Card : MonoBehaviour
 
     public void UnselectCard_List()
     {
-        //content‚Ì•û‚ÌƒJ[ƒh‚ğ’T‚µ‚Äcurver‚ğ‚Í‚ª‚·
+        //contentã®æ–¹ã®ã‚«ãƒ¼ãƒ‰ã‚’æ¢ã—ã¦curverã‚’ã¯ãŒã™
 
         Card card = CardSelectManager.instance.cardSelect.SerchCard(magicEntity);
 

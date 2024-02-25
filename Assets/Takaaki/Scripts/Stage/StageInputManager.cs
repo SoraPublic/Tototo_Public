@@ -1,10 +1,10 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class StageInputManager : MonoBehaviour
 {
-    //Stage‚ÌƒV[ƒ“‚Ì“ü—Í‚ğŠÇ—
+    //Stageã®ã‚·ãƒ¼ãƒ³ã®å…¥åŠ›ã‚’ç®¡ç†
 
     private PlayerInput playerInput;
 

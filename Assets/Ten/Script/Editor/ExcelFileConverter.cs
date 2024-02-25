@@ -1,4 +1,4 @@
-using Enemy;
+ï»¿using Enemy;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 using System;
@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class ExcelFileConverter : AssetPostprocessor
 {
-    //ƒtƒ@ƒCƒ‹ƒpƒX‚Ì’è‹`
+    //ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ã®å®šç¾©
     const string EExcelFilePath = "Assets/Ten/ScriptableObject/Enemy/EnemyData.xlsx";
     const string ESkillDataDirPath = "Assets/Ten/ScriptableObject/Enemy/SkillData/";
     const string EAttackRuleDirPath = "Assets/Ten/ScriptableObject/Enemy/AttackRule/";
@@ -19,10 +19,10 @@ public class ExcelFileConverter : AssetPostprocessor
     const string EInfoSN = "EInfo";
     const string ObjectPathSN = "ObjectPath";
 
-    //Excelƒtƒ@ƒCƒ‹‚Ìƒwƒbƒ_s
+    //Excelãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ˜ãƒƒãƒ€è¡Œ
     private const int Row_Header_Num = 1;
 
-    // Excelƒtƒ@ƒCƒ‹‚ÌƒJƒ‰ƒ€’è‹`.
+    // Excelãƒ•ã‚¡ã‚¤ãƒ«ã®ã‚«ãƒ©ãƒ å®šç¾©.
     private enum SkillDataColumn
     {
         Label,
@@ -199,7 +199,7 @@ public class ExcelFileConverter : AssetPostprocessor
                     case SkillDataColumn.Coordinate:
                         List<string> value = new List<string>();
                         List<int> returnList = new List<int>();
-                        value.AddRange(cellValue.Split(new string[] { ",", " ", "@" }, StringSplitOptions.RemoveEmptyEntries));
+                        value.AddRange(cellValue.Split(new string[] { ",", " ", "ã€€" }, StringSplitOptions.RemoveEmptyEntries));
 
                         foreach (string v in value)
                         {
@@ -529,35 +529,35 @@ public class ExcelFileConverter : AssetPostprocessor
         switch (cell.CellType)
         {
             case CellType.String:
-                //•¶šŒ^
+                //æ–‡å­—å‹
                 strval = cell.StringCellValue;
                 break;
             case CellType.Numeric:
                 if (DateUtil.IsCellDateFormatted(cell))
                 {
-                    //“ú•tŒ^
+                    //æ—¥ä»˜å‹
                     strval = cell.DateCellValue.ToString("yyyy/MM/dd");
                 }
                 else
                 {
-                    //”’lŒ^
+                    //æ•°å€¤å‹
                     strval = cell.NumericCellValue.ToString();
                 }
                 break;
             case CellType.Boolean:
-                //^‹UŒ^
+                //çœŸå½å‹
                 strval = cell.BooleanCellValue.ToString();
                 break;
             case CellType.Formula:
-                //ŠÖ”
+                //é–¢æ•°
                 strval = cell.CellFormula.ToString();
                 break;
             case CellType.Blank:
-                //ƒuƒ‰ƒ“ƒN
+                //ãƒ–ãƒ©ãƒ³ã‚¯
                 strval = "";
                 break;
             case CellType.Error:
-                //ƒGƒ‰[
+                //ã‚¨ãƒ©ãƒ¼
                 strval = cell.ErrorCellValue.ToString();
                 break;
             default:
